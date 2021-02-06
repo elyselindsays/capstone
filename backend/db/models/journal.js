@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   Journal.associate = function (models) {
     Journal.belongsTo(models.User, { foreignKey: 'userId' });
-    Journal.hasMany(models.Note, { foreignKey: 'journalId' });
-    Journal.hasOne(models.ParkingLot, { foreignKey: 'journalId' });
+    Journal.hasMany(models.ListItem, { foreignKey: 'journalId' });
+    // Journal.hasOne(models.ParkingLot, { foreignKey: 'journalId' });
   };
   return Journal;
 };

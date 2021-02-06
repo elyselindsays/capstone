@@ -15,13 +15,12 @@ export const getUserJournals = () => async (dispatch) => {
   console.log('take off');
   const res = await fetch('/api/journals/');
   console.log(res.data);
-  console.log(res.data.id)
   console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
   dispatch(setJournals(res.data))
   return res;
 }
 
-// 1. Write your initial state[userReducer.js]
+
 const initialState = { journals: [] };
 
 function reducer(state = initialState, action) {
