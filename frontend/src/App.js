@@ -35,9 +35,12 @@ function App() {
           <Route path="/desktop">
             {/* <Desktop /> */}
           </Route>
-          <Route path="/journals">
+          {/* <Route path="/journals">
             <Journal />
-          </Route>
+          </Route> */}
+          {/* <Route path='/journals'>
+            <Journal />
+          </Route> */}
           {/* <section className="medium-container"> */}
           {/* <h2>Todos</h2> */}
           {/* <div className="todoapp"> */}

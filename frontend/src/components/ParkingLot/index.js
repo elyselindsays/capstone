@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getListItems } from '../../store/items';
+import { getListItemsByTitle } from '../../store/items';
 
 
 const ParkingLot = () => {
@@ -18,7 +18,7 @@ const ParkingLot = () => {
 
   useEffect(() => {
     // dispatch thunk to get all cars in parking lot
-    dispatch(getListItems())
+    dispatch(getListItemsByTitle('ParkingLot'))
 
   }, []);
 
@@ -38,7 +38,7 @@ const ParkingLot = () => {
       {itemsArr && itemsArr.map((item) => (
         <div className='item'>
 
-          <h3>{item.id}</h3>
+          <h3>{item.text}</h3>
 
         </div>
       ))}

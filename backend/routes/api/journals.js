@@ -2,7 +2,7 @@ const express = require("express");
 const { check } = require("express-validator");
 const asyncHandler = require("express-async-handler");
 const { restoreUser } = require("../../utils/auth");
-const { Journal, Page, TaskList } = require("../../db/models");
+const { Journal, ListItem } = require("../../db/models");
 const { Router } = require("express");
 
 const router = express.Router();
@@ -36,39 +36,40 @@ router.post('/', restoreUser, asyncHandler(async (req, res, next) => {
 }))
 
 
-// TODO: get all pages in a journal
-router.get('/pages', restoreUser, asyncHandler(async (req, res) => {
-  // Get all user journals
-  const { user } = req;
-  const pages = await Page.findAll({
-    where: {
-      journalId
-    }
-  })
-  console.log(pages)
-  return res.json(pages)
-
-}))
-
-// TODO: add a page
-router.post('/pages')
-
-// TODO: update a page
 
 
 // TODO: get list ITEMS?????
-// GET  /api/journals/items
-router.get('/items', restoreUser, asyncHandler(async (req, res) => {
+// GET  /api/journals/items/:title
+router.get(`/items/:pageTitle`, restoreUser, asyncHandler(async (req, res) => {
   const { user } = req;
-  const items = await TaskList.findAll({
+  const { pageTitle } = req.params;
+  console.log('***********rew.params****')
+  console.log(req.params)
+  console.log(pageTitle);
+
+  const items = await ListItem.findAll({
     where: {
-      userId: user.id
-      // and where title=title?
+      pageTitle: pageTitle,
+      userId: user.id,
+
     }
   })
+  console.log(items)
   return res.json(items);
 
 }))
+
+
+// TODO: update a list item
+
+
+
+
+// TODO: add a page?
+router.post('/pages')
+
+
+
 
 
 

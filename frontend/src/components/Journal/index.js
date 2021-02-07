@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserJournals } from '../../store/journals';
+import createModal from './createModal';
 
 
 const Journal = () => {
@@ -48,7 +49,7 @@ const Journal = () => {
         {/* map through user's journals and display them */}
         {journalsArr.map((journal) => (
           <div className='journal-cover'>
-            <Link>
+            <Link to='/journals'>
               <h3>{journal.title}</h3>
             </Link>
           </div>

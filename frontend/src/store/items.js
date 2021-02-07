@@ -9,10 +9,10 @@ const setListItems = (items) => ({
 })
 
 
-export const getListItems = () => async (dispatch) => {
-  const res = await fetch('/api/journals/items');
+export const getListItemsByTitle = (title) => async (dispatch) => {
+  const res = await fetch(`/api/journals/items/${title}`);
   dispatch(setListItems(res.data))
-  return res;
+  // return res;
 
 }
 
