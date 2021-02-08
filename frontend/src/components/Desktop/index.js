@@ -6,8 +6,8 @@ import LoginFormModal from '../LoginFormModal';
 import './Desktop.css';
 import Journal from '../Journal';
 import ParkingLot from '../ParkingLot';
-import FlagBanner from '../assets/FlagBanner';
-import icon1 from '../images/notebook-icon.jpeg';
+// import FlagBanner from '../assets/FlagBanner';
+// import icon1 from '../images/notebook-icon.jpeg';
 
 function Navigation({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
@@ -28,7 +28,7 @@ function Navigation({ isLoaded }) {
           <ProfileButton className="profile-button" user={sessionUser} />
           <h1>Hello {sessionUser.firstName}</h1>
         </div>
-        <img src={icon1} alt="notebook"></img>
+        {/* <img src={icon1} alt="notebook"></img> */}
         <Journal />
         <ParkingLot />
 
