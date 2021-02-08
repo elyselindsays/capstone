@@ -4,11 +4,13 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 // import LoginFormPage from "./components/LoginFormPage";
 import * as sessionActions from "./store/session";
-import Navigation from "./components/Navigation";
+// import Navigation from "./components/Navigation";
 import Desktop from "./components/Desktop";
 import Journal from "./components/Journal";
+import OpenJournal from "./components/Journal/OpenJournal";
 // import Header from './features/header/Header'
-// import TodoList from './components/List'
+import TodoList from './components/List'
+import Template from "./components/Templates";
 // import Footer from './features/footer/Footer'
 
 function App() {
@@ -26,14 +28,13 @@ function App() {
     // if user is logged in, show desktop with {firstName's desktop}
 
     <>
-      <Navigation isLoaded={isLoaded} />
       {isLoaded && (
         <Switch>
-          {/* <Route path="/login" >
-            <LoginFormPage />
-          </Route> */}
-          <Route path="/desktop">
-            {/* <Desktop /> */}
+          <Route exact path="/" >
+            <Desktop isLoaded={isLoaded} />
+          </Route>
+          <Route path="/journal">
+            <OpenJournal />
           </Route>
           {/* <Route path="/journals">
             <Journal />
@@ -45,7 +46,10 @@ function App() {
           {/* <h2>Todos</h2> */}
           {/* <div className="todoapp"> */}
           {/* <Header /> */}
-          {/* <TodoList /> */}
+          <Route path="/list">
+
+            <Template />
+          </Route>
           {/* <Footer /> */}
           {/* </div> */}
           {/* </section> */}

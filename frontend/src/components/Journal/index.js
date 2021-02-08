@@ -1,35 +1,40 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserJournals } from '../../store/journals';
-import createModal from './createModal';
+import CreateModal from './CreateModal';
+import Plate from '../assets/Plate';
+import Arrow from '../assets/Arrow';
+import Flag from '../assets/Flag';
+import FlagBanner from '../assets/FlagBanner';
+import HorizontalBox from '../assets/HorizontalBox';
+import Notebook from '../assets/Notebook';
+import Page from '../assets/Page';
+import OtherImage from '../assets/OtherImage';
+import PageIcon from '../assets/PageIcon';
+import NotebookIcon4 from '../assets/NotebookIcon4';
 
 
 const Journal = () => {
   const dispatch = useDispatch();
+  const [showModal, setShowModal] = useState(false);
 
   const user = useSelector(state => state.session.user)
   const journals = useSelector(state => state.journals)
 
   const userId = user.id;
-  console.log(userId);
-  console.log(journals);
+  const [text, setText] = useState('')
 
-  const journalsArr = Object.values(journals);
+  let journalsArr;
+  if (journals) {
+    journalsArr = Object.values(journals.myJournals);
+  }
 
   // useEffect onload, GET ALL journals that belong to the user 
   useEffect(() => {
     dispatch(getUserJournals())
   }, []);
 
-  const createJournal = () => {
-    // what is the name of your journal?
-    // onSubmit of journal name, dispatch thunk to create a new journal for the user
-    // dispatch(newJournal())
-    return (
-      { titleModal }
-    )
-  }
 
 
   const titleModal = (
@@ -46,22 +51,19 @@ const Journal = () => {
   if (journals) {
     journalView = (
       <>
-        {/* map through user's journals and display them */}
         {journalsArr.map((journal) => (
-          <div className='journal-cover'>
+          <div key={journal.id} className='journal-cover'>
             <Link to='/journals'>
               <h3>{journal.title}</h3>
             </Link>
           </div>
         ))}
-
       </>
     )
   } else {
     journalView = (
       <>
         <p>no journals yet!</p>
-
       </>
     )
   }
@@ -73,21 +75,54 @@ const Journal = () => {
     <>
       <h1>Journals</h1>
       {journalView}
+      <CreateModal />
+      <div className="bujo-icons">
+
+        <Arrow />
+      </div>
+      <div className="bujo-icons">
+
+        <Plate />
+      </div>
+      <div className="bujo-icons">
+        <Flag />
+
+      </div>
+      <div className="bujo-icons">
+        <FlagBanner />
+
+      </div>
+      <div className="bujo-icons">
+        <HorizontalBox />
+
+      </div>
+      <div className="bujo-icons">
+        <Notebook />
+
+      </div>
+      <div className="bujo-icons">
+
+        <Page />
+      </div>
+      <div className="bujo-icons">
+
+        <OtherImage />
+      </div>
+
+
 
 
 
       {/* <h1>{journals.title}</h1> */}
       <h1>Create a new journal</h1>
-      <button style={{ fontSize: 100, cursor: "pointer" }} onClick={createJournal}>+</button>
+      <button style={{ fontSize: 100, cursor: "pointer" }} onClick={() => setShowModal(!showModal)}>+</button>
     </>
 
   )
 }
 
 
-export const Page = () => {
 
-}
 
 
 export default Journal;

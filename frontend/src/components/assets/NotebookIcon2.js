@@ -1,0 +1,110 @@
+// const NotebookIcon2 = () => {
+//   return (
+
+
+//     <>
+//       <svg viewBox="62.644 -127.663 257.8 257.8" xmlns="http://www.w3.org/2000/svg">
+//         <g transform="matrix(1, 0, 0, 1, -508.55603, -322.06308)">
+//           <circle className="st0" cx="700.1" cy="323.3" r="128.9" style={{}} fill: "rgb(155, 106, 198);" />
+//           <g>
+//             <g>
+//               <path className="st12" d="M763.8,282.1h-2.5h-17.8h-50.3v82.4h50.3h17.8h2.5c1.8,0,3.2-1.4,3.2-3.2l2.1-38l-2.1-38 C767,283.5,765.6,282.1,763.8,282.1z" style={{}} fill: "rgb(255, 113, 124);" />
+//               <path className="st12" d="M622.7,282.1h2.5H643h50.3v82.4H643h-17.8h-2.5c-1.8,0-3.2-1.4-3.2-3.2l-2.1-38l2.1-38 C619.5,283.5,620.9,282.1,622.7,282.1z" style={{}} fill: "rgb(255, 113, 124);" />
+//               <rect x="694.4" y="283.5" className="st13" width="65.8" height="79.6" style={{}} fill: "rgb(255, 248, 164);" />
+//               <rect x="626.3" y="283.5" className="st13" width="65.8" height="79.6" style={{}} fill: "rgb(255, 248, 164);" />
+//               <g>
+//                 <path className="st14" d="M781.4,317.7h-12.6l0.3,5.6l-0.3,5.6h12.6c0.8,0,1.4-0.6,1.4-1.4v-8.3 C782.8,318.4,782.2,317.7,781.4,317.7z" style={{}} fill: "rgb(239, 65, 54);" />
+//               </g>
+//               <circle className="st15" cx="777.5" cy="323.3" r="3" style={{}} fill: "rgb(128, 130, 133);" />
+//               <rect x="683.8" y="293.2" className="st16" width="4.7" height="4.7" style={{}} fill: "rgb(155, 133, 121);" />
+//               <rect x="683.8" y="320.9" className="st16" width="4.7" height="4.7" style={{}} fill: "rgb(155, 133, 121);" />
+//               <rect x="683.8" y="348.7" className="st16" width="4.7" height="4.7" style={{}} fill: "rgb(155, 133, 121);" />
+//               <rect x="697.8" y="293.2" className="st16" width="4.7" height="4.7" style={{}} fill: "rgb(155, 133, 121);" />
+//               <rect x="697.8" y="320.9" className="st16" width="4.7" height="4.7" style={{}} fill: "rgb(155, 133, 121);" />
+//               <rect x="697.8" y="348.7" className="st16" width="4.7" height="4.7" style={{}} fill: "rgb(155, 133, 121);" />
+//               <path className="st15" d="M700.1,295.5c0,0.5-0.4,0.9-0.9,0.9h-12.2c-0.5,0-0.9-0.4-0.9-0.9l0,0c0-0.5,0.4-0.9,0.9-0.9h12.2 C699.8,294.7,700.1,295.1,700.1,295.5L700.1,295.5z" style={{}} fill: "rgb(128, 130, 133);" />
+//               <path className="st17" d="M700.1,323.3c0,0.5-0.4,0.9-0.9,0.9h-12.2c-0.5,0-0.9-0.4-0.9-0.9l0,0c0-0.5,0.4-0.9,0.9-0.9h12.2 C699.8,322.4,700.1,322.8,700.1,323.3L700.1,323.3z" style={{}} fill: "rgb(167, 169, 172);" />
+//               <path className="st15" d="M700.1,351c0,0.5-0.4,0.9-0.9,0.9h-12.2c-0.5,0-0.9-0.4-0.9-0.9l0,0c0-0.5,0.4-0.9,0.9-0.9h12.2 C699.8,350.2,700.1,350.6,700.1,351L700.1,351z" style={{}} fill: "rgb(128, 130, 133);" />
+//               <g>
+//                 <rect x="637.6" y="291.8" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="637.6" y="298.6" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="637.6" y="305.4" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="637.6" y="312.2" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="637.6" y="319" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="637.6" y="325.8" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="637.6" y="332.6" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="637.6" y="339.4" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="637.6" y="346.2" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="637.6" y="353" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="705.7" y="291.8" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="705.7" y="298.6" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="705.7" y="305.4" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="705.7" y="312.2" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="705.7" y="319" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="705.7" y="325.8" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="705.7" y="332.6" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="705.7" y="339.4" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="705.7" y="346.2" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//               <g>
+//                 <rect x="705.7" y="353" className="st11" width="43.2" height="1.3" style={{}} fill: "rgb(109, 110, 113);" />
+//               </g>
+//             </g>
+//             <g>
+//               <g>
+//                 <rect x="620.5" y="288.1" className="st18" width="5.8" height="14.9" style={{}} fill: "rgb(88, 89, 91);" />
+//                 <rect x="621.4" y="303" className="st6" width="4.1" height="35.7" style={{}} fill: "rgb(35, 31, 32);" />
+//                 <polygon className="st18" points="625.4,338.7 623.4,338.7 621.4,338.7 620.8,339.4 620.8,355.8 623.4,355.8 626,355.8 626,339.4 &#10;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;&#9;" style={{}} fill: "rgb(88, 89, 91);" />
+//                 <g>
+//                   <polygon className="st6" points="626,355.8 620.8,355.8 622.5,360.6 624.4,360.6 &#9;&#9;&#9;&#9;&#9;" style={{}} fill: "rgb(35, 31, 32);" />
+//                   <polygon className="st18" points="624.1,360.6 622.7,360.6 623.4,362.6 &#9;&#9;&#9;&#9;&#9;" style={{}} fill: "rgb(88, 89, 91);" />
+//                 </g>
+//               </g>
+//               <g>
+//                 <path className="st6" d="M625.4,286c0-1.1-0.9-2-2-2c-1.1,0-2,0.9-2,2v2.1h4.1V286z" style={{}} fill: "rgb(35, 31, 32);" />
+//               </g>
+//             </g>
+//           </g>
+//         </g>
+//       </svg>
+//     </>
+//   )
+// }
+
+// export default NotebookIcon2;

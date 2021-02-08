@@ -3,6 +3,11 @@
   --redux-color: #764abc;
 }
 
+* {
+  box-sizing: border-box;
+ 
+}
+
 html {
   height: 100%;
 }
@@ -18,11 +23,16 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightcyan;
 }
 
-div#root {
+/* div#root {
   height: 100%;
-}
+} */
+
+/* div {
+  background-color: #cc9a9a;
+} */
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
@@ -443,6 +453,19 @@ ul.todo-list {
   color: #af5b5e;
 }
 
+.icon-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  width: 60%;
+}
+
+#desktop-nameplate {
+  display: flex;
+  justify-content: center;
+}
+
 /* Font-Awesome base icon rules */
 .svg-inline--fa.fa-w-11 {
   width: 0.6875em;
@@ -587,4 +610,19 @@ form.colorSelection label {
 
 form.colorSelection input[type='checkbox'] {
   margin-right: 5px;
+}
+
+.bujo-icons {
+  width: 100px;
+}
+
+.profile-button {
+  display: flex;
+  justify-content: flex-end;
+
+}
+
+#core-nav-container {
+  display: flex;
+  justify-content: right;
 }

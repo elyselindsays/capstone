@@ -10,8 +10,8 @@ const rootReducer = combineReducers({
   session,
   journals,
   items,
-  // todos: todosReducer,
-  // filters: filtersReducer,
+  todos: todosReducer,
+  filters: filtersReducer,
 });
 
 let enhancer;

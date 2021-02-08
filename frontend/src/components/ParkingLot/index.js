@@ -1,6 +1,6 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { getListItemsByTitle } from '../../store/items';
+import { addNewItem, getListItemsByTitle } from '../../store/items';
 
 
 const ParkingLot = () => {
@@ -8,26 +8,26 @@ const ParkingLot = () => {
 
   const user = useSelector(state => state.session.user);
   const items = useSelector(state => state.items);
-  const userId = user.id;
+
+  const [text, setText] = useState('')
+  const title = "ParkingLot"
+  console.log(items.listItems)
 
   let itemsArr;
   if (items) {
-
-    itemsArr = Object.values(items)
+    itemsArr = Object.values(items.listItems)
   }
 
-  useEffect(() => {
-    // dispatch thunk to get all cars in parking lot
-    dispatch(getListItemsByTitle('ParkingLot'))
+  console.log('******', itemsArr)
 
+  useEffect(() => {
+    dispatch(getListItemsByTitle('ParkingLot'))
   }, []);
 
   const lotSubmit = (e) => {
     e.preventDefault();
-    // dispatch thunk to addtoparkinglot
-
-    // append? newItem to parking lot
-
+    dispatch(addNewItem({ title, text }))
+    setText('')
   }
 
 
@@ -36,14 +36,12 @@ const ParkingLot = () => {
     <>
       <h2>Parking Lot</h2>
       {itemsArr && itemsArr.map((item) => (
-        <div className='item'>
-
+        <div className='item' key={item.id}>
           <h3>{item.text}</h3>
-
         </div>
       ))}
       <form onSubmit={lotSubmit}>
-        <input type="text" placeholder="Let it all out" />
+        <input onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Let it all out" />
       </form>
 
     </>

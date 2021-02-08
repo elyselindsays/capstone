@@ -1,9 +1,18 @@
+import { useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { addNewJournal } from '../../store/journals';
 
+const CreateModal = () => {
+  // const [showModal, setShowModal] = useState(false);
+  const dispatch = useDispatch();
+  const [title, setTitle] = useState('');
 
-const createModal = () => {
+  console.log(title)
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(addNewJournal(title))
+    setTitle('')
 
-  const handleSubmit = () => {
-    // dispatch thunk to createjournal
 
 
   }
@@ -11,11 +20,11 @@ const createModal = () => {
   return (
     <div id='title-modal' className='modal'>
       <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Journal Title"></input>
-        <input type="submit">Create Journal</input>
+        <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Journal Title"></input>
+        <button>submit</button>
       </form>
     </div>
   )
 }
 
-export default createModal;
+export default CreateModal;

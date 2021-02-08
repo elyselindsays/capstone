@@ -28,6 +28,7 @@ router.get('/', restoreUser, asyncHandler(async (req, res) => {
 // POST   /api/journals
 router.post('/', restoreUser, asyncHandler(async (req, res, next) => {
   const { user } = req;
+  const { title } = req.body;
   const newJournal = await Journal.create({
     userId: user.id,
     title: title
@@ -56,6 +57,26 @@ router.get(`/items/:pageTitle`, restoreUser, asyncHandler(async (req, res) => {
   })
   console.log(items)
   return res.json(items);
+
+}))
+
+
+router.post(`/items/:pageTitle`, restoreUser, asyncHandler(async (req, res) => {
+  const { user } = req;
+  // const { pageTitle } = req.params;
+  const { text, pageTitle } = req.body;
+  console.log('***********req.params****')
+  console.log(req.params)
+  console.log(pageTitle);
+
+  const newItem = await ListItem.create({
+    text,
+    pageTitle,
+    complete: false,
+    userId: user.id
+  })
+  console.log(newItem)
+  return res.json(newItem);
 
 }))
 

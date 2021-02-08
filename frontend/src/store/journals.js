@@ -1,83 +1,69 @@
 import { fetch } from './csrf.js';
 
 const SET_JOURNALS = "/journals/SET_JOURNALS";
+const ADD_JOURNAL = "/journals/ADD_JOURNAL";
 
-// 9. Dispatch an action creator`(TBD)` passing the info from the backend[userReducer.js]
+// ACTION CREATORS
 const setJournals = (journals) => ({
-
   type: SET_JOURNALS,
   payload: journals
 })
 
+const addJournal = (journal) => ({
+  type: ADD_JOURNAL,
+  payload: journal
+})
 
-// 7. Define a thunk to hit a backend route`(TBD)`[userReducer.js]
+// THUNKS
 export const getUserJournals = () => async (dispatch) => {
-  console.log('take off');
   const res = await fetch('/api/journals/');
-  console.log(res.data);
-  console.log('!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!')
   dispatch(setJournals(res.data))
   return res;
 }
 
+export const addNewJournal = (title) => async (dispatch) => {
+  const res = await fetch('/api/journals', {
+    method: 'POST',
+    body: JSON.stringify({
+      title: title
+    })
+  })
+  dispatch(addJournal(res.data));
+}
 
-const initialState = { journals: [] };
+
+const initialState = {
+  myJournals: {}
+};
 
 function reducer(state = initialState, action) {
-  let newState;
   switch (action.type) {
     case SET_JOURNALS:
-      newState = action.payload;
-      return newState;
+      const newJournals = {}
+      action.payload.forEach(journal => {
+        newJournals[journal.id] = journal
+      })
+      return {
+        ...state,
+        myJournals: newJournals
+      }
+    case ADD_JOURNAL: {
+      const journal = action.payload
+      console.log(journal)
+      return {
+        ...state,
+        myJournals: {
+          ...state.myJournals,
+          [journal.id]: journal
+        }
+      }
+    }
     default:
       return state;
   }
 }
 
+
 export default reducer;
-
-// export const signup = (user) => async (dispatch) => {
-//   const { firstName, lastName, email, password } = user;
-//   const response = await fetch('/api/users', {
-//     method: 'POST',
-//     body: JSON.stringify({
-//       firstName,
-//       lastName,
-//       email,
-//       password
-//     })
-//   });
-
-//   dispatch(setUser(response.data.user));
-//   return response;
-// };
-
-// export const logout = () => async (dispatch) => {
-//   const response = await fetch('/api/session', {
-//     method: 'DELETE'
-//   });
-//   dispatch(removeUser());
-//   return response;
-// };
-
-// const initialState = { user: null };
-
-// function reducer(state = initialState, action) {
-//   let newState;
-//   switch (action.type) {
-//     case SET_USER:
-//       newState = Object.assign({}, state, { user: action.payload });
-//       return newState;
-//     case REMOVE_USER:
-//       newState = Object.assign({}, state, { user: null });
-//       return newState;
-//     default:
-//       return state;
-//   }
-// }
-
-
-
-// export default reducer;
 
 
