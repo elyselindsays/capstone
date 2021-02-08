@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserJournals } from '../../store/journals';
-import CreateModal from './CreateModal';
+// import CreateModal from './CreateModal';
 import Plate from '../assets/Plate';
 import Arrow from '../assets/Arrow';
 import Flag from '../assets/Flag';
@@ -11,8 +11,8 @@ import HorizontalBox from '../assets/HorizontalBox';
 import Notebook from '../assets/Notebook';
 import Page from '../assets/Page';
 import OtherImage from '../assets/OtherImage';
-import PageIcon from '../assets/PageIcon';
-import NotebookIcon4 from '../assets/NotebookIcon4';
+// import PageIcon from '../assets/PageIcon';
+// import NotebookIcon4 from '../assets/NotebookIcon4';
 
 
 const Journal = () => {
@@ -75,7 +75,7 @@ const Journal = () => {
     <>
       <h1>Journals</h1>
       {journalView}
-      <CreateModal />
+      {/* <CreateModal /> */}
       <div className="bujo-icons">
 
         <Arrow />
