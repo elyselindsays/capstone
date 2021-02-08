@@ -4,13 +4,11 @@ import { saveNewTodo } from '../../store/todos';
 import { addNewItem, getListItemsByTitle } from '../../store/items';
 
 
-// Most form state probably shouldn't be kept in Redux. Instead, keep the data in your form components as you're editing it, and then dispatch Redux actions to update the store when the user is done.
-
 const Template = () => {
   const [text, setText] = useState('')
   const dispatch = useDispatch();
   const pageTitle = ''
-  const user = useSelector(state => state.session.user);
+
   const items = useSelector(state => state.items);
 
   let itemsArr;

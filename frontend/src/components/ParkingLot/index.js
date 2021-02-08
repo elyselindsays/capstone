@@ -5,23 +5,18 @@ import { addNewItem, getListItemsByTitle } from '../../store/items';
 
 const ParkingLot = () => {
   const dispatch = useDispatch();
-
-  const user = useSelector(state => state.session.user);
   const items = useSelector(state => state.items);
 
   const [text, setText] = useState('')
   const title = "ParkingLot"
-  console.log(items.listItems)
 
   let itemsArr;
   if (items) {
     itemsArr = Object.values(items.listItems)
   }
 
-  console.log('******', itemsArr)
-
   useEffect(() => {
-    dispatch(getListItemsByTitle('ParkingLot'))
+    dispatch(getListItemsByTitle(title))
   }, []);
 
   const lotSubmit = (e) => {
@@ -29,8 +24,6 @@ const ParkingLot = () => {
     dispatch(addNewItem({ title, text }))
     setText('')
   }
-
-
 
   return (
     <>
@@ -43,13 +36,8 @@ const ParkingLot = () => {
       <form onSubmit={lotSubmit}>
         <input onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Let it all out" />
       </form>
-
     </>
-
-
-
   )
 }
-
 
 export default ParkingLot;
