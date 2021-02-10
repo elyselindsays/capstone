@@ -7,14 +7,10 @@ const CreateModal = () => {
   const dispatch = useDispatch();
   const [title, setTitle] = useState('');
 
-  console.log(title)
   const handleSubmit = (e) => {
     e.preventDefault()
     dispatch(addNewJournal(title))
     setTitle('')
-
-
-
   }
 
   return (

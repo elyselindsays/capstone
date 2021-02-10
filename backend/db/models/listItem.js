@@ -2,7 +2,7 @@
 module.exports = (sequelize, DataTypes) => {
   const ListItem = sequelize.define('ListItem', {
     text: DataTypes.TEXT,
-    pageTitle: DataTypes.STRING,
+    pageId: DataTypes.INTEGER,
     complete: DataTypes.BOOLEAN,
     userId: DataTypes.INTEGER,
     journalId: DataTypes.INTEGER,
@@ -10,6 +10,7 @@ module.exports = (sequelize, DataTypes) => {
   }, {});
   ListItem.associate = function (models) {
     ListItem.belongsTo(models.Journal, { foreignKey: 'journalId' });
+    ListItem.belongsTo(models.Page, { foreignKey: 'pageId' });
     ListItem.belongsTo(models.User, { foreignKey: 'userId' });
   };
   return ListItem;

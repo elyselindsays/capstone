@@ -1,0 +1,19 @@
+#journal-container {
+  background-color: thistle;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+#index-container {
+  background-color: rgb(146, 48, 202);
+}
+
+.journal-spread {
+  background-color: turquoise;
+  /* padding-top: 18px;
+  padding-bottom: 18px;
+  padding-right: 60px;
+  padding-left: 60px; */
+  width: 45%;
+  padding: 2%;
+}

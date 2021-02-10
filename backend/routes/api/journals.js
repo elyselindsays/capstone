@@ -1,9 +1,9 @@
 const express = require("express");
-const { check } = require("express-validator");
 const asyncHandler = require("express-async-handler");
 const { restoreUser } = require("../../utils/auth");
-const { Journal, ListItem } = require("../../db/models");
+const { Journal, Page, ListItem } = require("../../db/models");
 const { Router } = require("express");
+
 
 const router = express.Router();
 
@@ -12,15 +12,24 @@ const router = express.Router();
 // GET    /api/journals
 router.get('/', restoreUser, asyncHandler(async (req, res) => {
   const { user } = req;
-  console.log(user);
-  console.log('*****************************************')
   const journals = await Journal.findAll({
     where: {
       userId: user.id
     }
   })
-  console.log(journals)
   return res.json(journals)
+}))
+
+
+// GET ALL PAGES IN A JOURNAL
+router.get('/:journalId/pages/', restoreUser, asyncHandler(async (req, res) => {
+  const { journalId } = req.params;
+  const pages = await Page.findAll({
+    where: {
+      journalId
+    }
+  })
+  return res.json(pages);
 }))
 
 
@@ -37,58 +46,41 @@ router.post('/', restoreUser, asyncHandler(async (req, res, next) => {
 }))
 
 
-
-
-// TODO: get list ITEMS?????
+// get parking lot
 // GET  /api/journals/items/:title
-router.get(`/items/:pageTitle`, restoreUser, asyncHandler(async (req, res) => {
+router.get(`/items/:pageId`, restoreUser, asyncHandler(async (req, res) => {
   const { user } = req;
-  const { pageTitle } = req.params;
-  console.log('***********rew.params****')
-  console.log(req.params)
-  console.log(pageTitle);
-
+  const { pageId } = req.params;
   const items = await ListItem.findAll({
     where: {
-      pageTitle: pageTitle,
+      pageId,
       userId: user.id,
-
     }
   })
-  console.log(items)
   return res.json(items);
-
 }))
 
 
-router.post(`/items/:pageTitle`, restoreUser, asyncHandler(async (req, res) => {
+
+
+
+
+// ADD NEW LIST ITEM
+// POST   /api/journals/items/:pageId
+router.post(`/items/:pageId`, restoreUser, asyncHandler(async (req, res) => {
   const { user } = req;
-  // const { pageTitle } = req.params;
-  const { text, pageTitle } = req.body;
-  console.log('***********req.params****')
-  console.log(req.params)
-  console.log(pageTitle);
+  const { text, pageId, journalId } = req.body;
 
   const newItem = await ListItem.create({
     text,
-    pageTitle,
+    pageId,
     complete: false,
-    userId: user.id
+    userId: user.id,
+    journalId
   })
-  console.log(newItem)
+
   return res.json(newItem);
-
 }))
-
-
-// TODO: update a list item
-
-
-
-
-// TODO: add a page?
-router.post('/pages')
-
 
 
 

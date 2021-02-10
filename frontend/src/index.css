@@ -626,3 +626,13 @@ form.colorSelection input[type='checkbox'] {
   display: flex;
   justify-content: right;
 }
+
+button {
+  background-color: violet;
+  cursor: pointer;
+}
+
+.item {
+  display: flex;
+  align-items: center;
+}

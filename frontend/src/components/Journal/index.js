@@ -2,50 +2,37 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useSelector, useDispatch } from 'react-redux';
 import { getUserJournals } from '../../store/journals';
-// import CreateModal from './CreateModal';
+import { addNewJournal } from '../../store/journals';
 import Plate from '../assets/Plate';
 import Arrow from '../assets/Arrow';
 import Flag from '../assets/Flag';
 import FlagBanner from '../assets/FlagBanner';
 import HorizontalBox from '../assets/HorizontalBox';
 import Notebook from '../assets/Notebook';
-import Page from '../assets/Page';
+// import Pitcha from '../assets/Pitcha';
 import OtherImage from '../assets/OtherImage';
-// import PageIcon from '../assets/PageIcon';
-// import NotebookIcon4 from '../assets/NotebookIcon4';
 
 
 const Journal = () => {
   const dispatch = useDispatch();
   const [showModal, setShowModal] = useState(false);
-
-  const user = useSelector(state => state.session.user)
   const journals = useSelector(state => state.journals)
+  const [title, setTitle] = useState('');
 
-  const userId = user.id;
-  const [text, setText] = useState('')
+  const handleSubmit = (e) => {
+    e.preventDefault()
+    dispatch(addNewJournal(title))
+    setTitle('')
+  }
 
   let journalsArr;
   if (journals) {
     journalsArr = Object.values(journals.myJournals);
   }
 
-  // useEffect onload, GET ALL journals that belong to the user 
   useEffect(() => {
     dispatch(getUserJournals())
   }, []);
-
-
-
-  const titleModal = (
-    <div className="title-modal">
-      <form>
-        <label>Journal Title</label>
-        <input type="text" />
-        <input type="submit">Create Journal</input>
-      </form>
-    </div>
-  );
 
   let journalView;
   if (journals) {
@@ -53,7 +40,7 @@ const Journal = () => {
       <>
         {journalsArr.map((journal) => (
           <div key={journal.id} className='journal-cover'>
-            <Link to='/journals'>
+            <Link to={`/${journal.id}`}>
               <h3>{journal.title}</h3>
             </Link>
           </div>
@@ -62,62 +49,48 @@ const Journal = () => {
     )
   } else {
     journalView = (
-      <>
-        <p>no journals yet!</p>
-      </>
+      <p>no journals yet!</p>
     )
   }
 
   return (
-    // if the user already has journals, display them here to click on/navigate to
-
-    // button to click to create a new journal
     <>
       <h1>Journals</h1>
       {journalView}
-      {/* <CreateModal /> */}
+      <div id='title-modal' className='modal'>
+        <form onSubmit={handleSubmit}>
+          <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Journal Title"></input>
+          <button>submit</button>
+        </form>
+      </div>
       <div className="bujo-icons">
-
         <Arrow />
       </div>
       <div className="bujo-icons">
-
         <Plate />
       </div>
       <div className="bujo-icons">
         <Flag />
-
       </div>
       <div className="bujo-icons">
         <FlagBanner />
-
       </div>
       <div className="bujo-icons">
         <HorizontalBox />
-
       </div>
       <div className="bujo-icons">
         <Notebook />
-
       </div>
+      {/* <div className="bujo-icons">
+        <Pitcha />
+      </div> */}
       <div className="bujo-icons">
-
-        <Page />
-      </div>
-      <div className="bujo-icons">
-
         <OtherImage />
       </div>
 
-
-
-
-
-      {/* <h1>{journals.title}</h1> */}
       <h1>Create a new journal</h1>
       <button style={{ fontSize: 100, cursor: "pointer" }} onClick={() => setShowModal(!showModal)}>+</button>
     </>
-
   )
 }
 

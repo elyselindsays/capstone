@@ -5,6 +5,19 @@ import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Desktop from "./components/Desktop";
 import Template from "./components/Templates";
+import OpenJournal from "./components/Journal/OpenJournal";
+import HTMLFlipBook from "react-pageflip";
+
+function MyBook(props) {
+  return (
+    <HTMLFlipBook width={300} height={500}>
+      <div className="demoPage">Page 1</div>
+      <div className="demoPage">Page 2</div>
+      <div className="demoPage">Page 3</div>
+      <div className="demoPage">Page 4</div>
+    </HTMLFlipBook>
+  );
+}
 
 function App() {
   const dispatch = useDispatch();
@@ -19,12 +32,16 @@ function App() {
         <Switch>
           <Route exact path="/" >
             <Desktop isLoaded={isLoaded} />
+            <MyBook />
           </Route>
           <Route path="/list">
             <Template />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
+          </Route>
+          <Route path="/:journalId">
+            <OpenJournal />
           </Route>
         </Switch>
       )}

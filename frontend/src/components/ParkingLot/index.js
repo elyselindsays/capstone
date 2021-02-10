@@ -6,7 +6,6 @@ import { addNewItem, getListItemsByTitle } from '../../store/items';
 const ParkingLot = () => {
   const dispatch = useDispatch();
   const items = useSelector(state => state.items);
-
   const [text, setText] = useState('')
   const title = "ParkingLot"
 

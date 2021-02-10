@@ -25,12 +25,16 @@ export const getListItemsByTitle = (title) => async (dispatch) => {
   dispatch(setListItems(res.data))
 }
 
+export const getListItemsByPageId = (pageId) => async (dispatch) => {
+  const res = await fetch(`/api/journals/items/${pageId}`);
+  dispatch(setListItems(res.data))
+}
+
 
 
 export const addNewItem = (item) => {
   return async function addItemThunk(dispatch) {
     const { title, text } = item;
-    // const title = // take out all spaces in titlebefore
     const res = await fetch(`/api/journals/items/${title}`, {
       method: 'POST',
       body: JSON.stringify({
@@ -42,6 +46,15 @@ export const addNewItem = (item) => {
   }
 }
 
+export const toggleItem = (itemId) => async (dispatch) => {
+  const res = await fetch(`/api/journals/items/${itemId}`, {
+    method: 'PATCH',
+    body: JSON.stringify({
+      complete: true
+    })
+  })
+  dispatch(toggleComplete(res.data))
+}
 
 const initialState = {
   listItems: {}
@@ -69,6 +82,9 @@ function reducer(state = initialState, action) {
           [item.id]: item
         }
       }
+    }
+    case TOGGLE_COMPLETE: {
+      const item = action.payload
     }
     default:
       return state;
