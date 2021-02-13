@@ -23,14 +23,23 @@ const SinglePage = ({ id, title }) => {
 
   useEffect(() => {
     dispatch(getListItemsByPageId(id))
-  }, []);
+  }, [id]);
 
 
 
   const itemSubmit = (e) => {
     e.preventDefault();
-    dispatch(addNewItem({ text }));
+    dispatch(addNewItem(id, text));
     setText('')
+  }
+
+  const handleCheck = (e) => {
+    console.log(e.target.checked);
+    if (e.target.checked) {
+      // remove from itemsArr
+      // dispatch toggleItem()
+      // maybe strikethrough?
+    }
   }
 
 
@@ -40,7 +49,7 @@ const SinglePage = ({ id, title }) => {
       {itemsArr && itemsArr.map((item) => (
         <div className='item' key={item.id}>
           <label>
-            <input type="checkbox" className="check-custom" />
+            <input onChange={handleCheck} type="checkbox" className="check-custom" />
             <span className="check-toggle"></span>
           </label>
           <h3>{item.text}</h3>

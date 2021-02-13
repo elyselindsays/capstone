@@ -32,14 +32,16 @@ export const getListItemsByPageId = (pageId) => async (dispatch) => {
 
 
 
-export const addNewItem = (item) => {
+export const addNewItem = (id, text) => {
   return async function addItemThunk(dispatch) {
-    const { title, text } = item;
-    const res = await fetch(`/api/journals/items/${title}`, {
+    // const { pageId, text } = item;
+    console.log(id)
+    console.log(text)
+    const res = await fetch(`/api/journals/items/${id}`, {
       method: 'POST',
       body: JSON.stringify({
         text: text,
-        pageTitle: title,
+        pageId: id,
       })
     })
     dispatch(addListItem(res.data))
