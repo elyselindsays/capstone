@@ -5,7 +5,7 @@
 h1 {
   font-family: "Roboto";
   text-align: center;
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 .timer-wrapper {
@@ -30,7 +30,50 @@ h1 {
 
 .info {
   max-width: 360px;
-  margin: 40px auto 0;
+  /* margin: 40px auto 0; */
   text-align: center;
   font-size: 16px;
+}
+
+#splash-page {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.background {
+  width: 100%;
+  height: auto;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0,0,0,0.5);
+  z-index: 10;
+}
+
+.modal {
+   width: 300px;
+    height: 200px;
+    line-height: 200px;
+    position: fixed;
+    top: 50%; 
+    left: 50%;
+    margin-top: -100px;
+    margin-left: -150px;
+    background-color: #f1c40f;
+    border-radius: 5px;
+    text-align: center;
+    z-index: 11;
+}
+
+#desktop-nameplate {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-end;
+  padding-bottom: 5px;
 }

@@ -22,7 +22,7 @@ router.get('/', restoreUser, asyncHandler(async (req, res) => {
 
 
 // GET ALL PAGES IN A JOURNAL
-router.get('/:journalId/pages/', restoreUser, asyncHandler(async (req, res) => {
+router.get('/:journalId/pages/', asyncHandler(async (req, res) => {
   const { journalId } = req.params;
   const pages = await Page.findAll({
     where: {

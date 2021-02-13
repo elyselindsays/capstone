@@ -34,9 +34,10 @@ export const getUserJournals = () => async (dispatch) => {
 }
 
 export const getPagesByJournalId = (journalId) => async (dispatch) => {
+
   const res = await fetch(`/api/journals/${journalId}/pages/`);
   dispatch(setPages(res.data))
-  return res;
+
 }
 
 export const addNewJournal = (title) => async (dispatch) => {

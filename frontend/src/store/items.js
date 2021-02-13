@@ -83,9 +83,9 @@ function reducer(state = initialState, action) {
         }
       }
     }
-    case TOGGLE_COMPLETE: {
-      const item = action.payload
-    }
+    // case TOGGLE_COMPLETE: {
+    //   const item = action.payload
+    // }
     default:
       return state;
   }

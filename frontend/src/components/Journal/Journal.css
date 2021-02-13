@@ -2,6 +2,8 @@
   background-color: thistle;
   display: flex;
   justify-content: space-evenly;
+  padding-top: 12px;
+  padding-bottom: 12px;
 }
 
 #index-container {
@@ -9,11 +11,26 @@
 }
 
 .journal-spread {
-  background-color: turquoise;
+  background-image: url('../images/IMGS/dot-grid.png');
+  /* background-color: turquoise; */
   /* padding-top: 18px;
   padding-bottom: 18px;
   padding-right: 60px;
   padding-left: 60px; */
   width: 45%;
   padding: 2%;
+  height: 650px;
+
+}
+
+#grid-container {
+  display: grid;
+  grid-template-rows: repeat(10, 1fr);
+  grid-template-columns: repeat(7, 1fr);
+}
+
+#journal-cover {
+  width: 100px;
+  height: 110px;
+  
 }

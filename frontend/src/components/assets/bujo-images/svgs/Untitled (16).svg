@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-349.641 211.635 257.8 257.8" xmlns="http://www.w3.org/2000/svg">
+  <g transform="matrix(1, 0, 0, 1, -544.840698, -336.464935)">
+    <circle class="st21" cx="324.1" cy="677" r="128.9" style="fill: rgb(249, 147, 193);"/>
+    <g>
+      <g>
+        <path class="st25" d="M367.7,734.1c0,2.2-1.8,3.9-3.9,3.9h-89.4c-2.2,0-3.9-1.8-3.9-3.9V620c0-2.2,1.8-3.9,3.9-3.9h89.4 c2.2,0,3.9,1.8,3.9,3.9V734.1z" style="fill: rgb(28, 117, 188);"/>
+        <rect x="263.7" y="616.1" class="st6" width="13.4" height="122" style="fill: rgb(35, 31, 32);"/>
+        <rect x="266.2" y="624.8" class="st21" width="3.7" height="14.2" style="fill: rgb(249, 147, 193);"/>
+        <rect x="266.2" y="669.9" class="st21" width="3.7" height="14.2" style="fill: rgb(249, 147, 193);"/>
+        <rect x="266.2" y="715.1" class="st21" width="3.7" height="14.2" style="fill: rgb(249, 147, 193);"/>
+        <g>
+          <path class="st6" d="M384.3,668.3h-16.6v17.5h16.6c3,0,5.5-2.4,5.5-5.5v-6.6C389.7,670.7,387.3,668.3,384.3,668.3z" style="fill: rgb(35, 31, 32);"/>
+        </g>
+        <rect x="258.5" y="626.3" class="st15" width="9.4" height="4" style="fill: rgb(128, 130, 133);"/>
+        <rect x="258.5" y="633.5" class="st17" width="9.4" height="4" style="fill: rgb(167, 169, 172);"/>
+        <rect x="258.5" y="671.5" class="st15" width="9.4" height="4" style="fill: rgb(128, 130, 133);"/>
+        <rect x="258.5" y="678.6" class="st17" width="9.4" height="4" style="fill: rgb(167, 169, 172);"/>
+        <rect x="258.5" y="716.6" class="st15" width="9.4" height="4" style="fill: rgb(128, 130, 133);"/>
+        <rect x="258.5" y="723.8" class="st17" width="9.4" height="4" style="fill: rgb(167, 169, 172);"/>
+      </g>
+      <g>
+        <rect x="372" y="619.7" class="st6" width="6.4" height="1.6" style="fill: rgb(35, 31, 32);"/>
+        <rect x="371.7" y="621.3" class="st18" width="7" height="35.1" style="fill: rgb(88, 89, 91);"/>
+        <rect x="372.2" y="656.4" class="st6" width="6" height="2.4" style="fill: rgb(35, 31, 32);"/>
+        <g>
+          <path class="st6" d="M373.6,730.2c0.3,0.7,0.5,1.2,0.8,1.6h1.7c0.3-0.4,0.6-1,0.8-1.6H373.6z" style="fill: rgb(35, 31, 32);"/>
+          <path class="st18" d="M378.7,721.8c0-5.9-1.6-10.6-3.5-10.6s-3.5,4.7-3.5,10.6c0,0.6,0.8,5.5,1.9,8.4h3.3 C377.9,727.3,378.7,722.4,378.7,721.8z" style="fill: rgb(88, 89, 91);"/>
+        </g>
+        <rect x="371.7" y="658.8" class="st18" width="7" height="62.2" style="fill: rgb(88, 89, 91);"/>
+        <rect x="371.7" y="721" class="st6" width="7" height="1.6" style="fill: rgb(35, 31, 32);"/>
+        <g>
+          <path class="st6" d="M374.7,731.9v2c0,0.3,0.2,0.5,0.5,0.5s0.5-0.2,0.5-0.5v-2H374.7z" style="fill: rgb(35, 31, 32);"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

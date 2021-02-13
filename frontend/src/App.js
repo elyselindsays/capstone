@@ -6,18 +6,9 @@ import * as sessionActions from "./store/session";
 import Desktop from "./components/Desktop";
 import Template from "./components/Templates";
 import OpenJournal from "./components/Journal/OpenJournal";
-import HTMLFlipBook from "react-pageflip";
-
-function MyBook(props) {
-  return (
-    <HTMLFlipBook width={300} height={500}>
-      <div className="demoPage">Page 1</div>
-      <div className="demoPage">Page 2</div>
-      <div className="demoPage">Page 3</div>
-      <div className="demoPage">Page 4</div>
-    </HTMLFlipBook>
-  );
-}
+import Notes from "./components/Templates/Notes";
+import Stickies from './components/images/Stickies';
+import SinglePage from "./components/Journal/SinglePage";
 
 function App() {
   const dispatch = useDispatch();
@@ -29,21 +20,24 @@ function App() {
   return (
     <>
       {isLoaded && (
-        <Switch>
+        <>
           <Route exact path="/" >
             <Desktop isLoaded={isLoaded} />
-            <MyBook />
           </Route>
-          <Route path="/list">
-            <Template />
+          <Route path="/stickies">
+            <Stickies />
           </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/:journalId">
+          <Route path="/journals/:journalId">
             <OpenJournal />
           </Route>
-        </Switch>
+          <Route path="/journals/:journalId/:pageId">
+            <SinglePage />
+          </Route>
+        </>
+
       )}
     </>
   );
