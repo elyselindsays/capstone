@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addNewItem, getListItemsByPageId, toggleItem } from '../../store/items';
 import ProgressBar from 'react-customizable-progressbar';
@@ -41,7 +41,9 @@ const Tracker2 = ({ id, title }) => {
       </div>
     </div>
   )
-
+  useEffect(() => {
+    dispatch(getListItemsByPageId(id))
+  }, [id]);
 
 
 
@@ -57,12 +59,12 @@ const Tracker2 = ({ id, title }) => {
       {
         itemsArr && itemsArr.map((item) => (
           <div className='item' key={item.id}>
-            <h3>{item.text}</h3>
+            <label>
+              <input onChange={handleCheck} type="checkbox" className="check-custom" />
+              <span className="check-toggle"></span>
+            </label>
+            <p id='todo'>{item.text}</p>
             <div className='tracker-grid'>
-              <label>
-                <input onChange={handleCheck} type="checkbox" className="check-custom" />
-                <span className="check-toggle"></span>
-              </label>
             </div>
           </div>
         ))

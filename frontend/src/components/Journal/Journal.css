@@ -167,7 +167,11 @@ yellow: rgb(253,222,50); */
 .item {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  /* justify-content: space-between; */
+}
+
+#todo {
+  padding-left: 10px;
 }
 
 h2 {
