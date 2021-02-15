@@ -62,12 +62,12 @@ h3 {
 .left-page {
   display: flex;
   flex-direction: column;
-  width: 42%;
+  width: 47%;
   /* justify-content: space-around; */
 }
 
 .right-page {
-  width: 52%;
+  width: 48%;
 }
 
 #dashboard {

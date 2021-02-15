@@ -35,7 +35,7 @@ const PartyMode = () => {
           className="party-button"
           autoFocus
         >
-          Party
+          PARTY!
         </button>
       </div>
     </div>

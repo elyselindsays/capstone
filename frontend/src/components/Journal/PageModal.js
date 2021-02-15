@@ -61,13 +61,13 @@ const PageModal = () => {
           <div value={tracker} className="page-template-icon" onClick={addTracker}>{tracker}</div>
         </div>
       ))}
+      <div value={hydration} className="page-template-icon" onClick={addHydration}>{hydration}</div>
+      <div value={goals} className="page-template-icon" onClick={addGoals}>{goals}</div>
       {nonCheckLists.map(list => (
         <div key={list.id} id="add-page">
           <div value={list} className="page-template-icon" onClick={addTracker}>{list}</div>
         </div>
       ))}
-      <div value={goals} className="page-template-icon" onClick={addGoals}>{goals}</div>
-      <div value={hydration} className="page-template-icon" onClick={addHydration}>{hydration}</div>
 
 
     </div>

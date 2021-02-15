@@ -62,7 +62,10 @@ function Desktop({ isLoaded }) {
       <div id="desktop-container">
         {isLoaded && splashPage}
       </div>
-      <PartyMode />
+      <div id='party-container'>
+
+        <PartyMode />
+      </div>
     </>
   );
 }

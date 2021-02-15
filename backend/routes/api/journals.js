@@ -47,7 +47,7 @@ router.post('/', restoreUser, asyncHandler(async (req, res, next) => {
 }))
 
 
-// get parking lot
+
 // GET  /api/journals/items/:title
 router.get(`/items/:pageId`, restoreUser, asyncHandler(async (req, res) => {
   const { user } = req;
