@@ -1,5 +1,5 @@
 #journal-container {
-  background-color: rgb(0, 233, 221);
+  background-color: rgb(137, 141, 141);
   border-radius: 10px;
   display: flex;
   justify-content: space-evenly;
@@ -10,8 +10,14 @@
 }
 
 #index-container {
-  background-color: rgb(146, 48, 202);
+  background-color: rgba(146, 48, 202, .1);
 }
+
+
+h3 {
+  text-align: center;
+}
+
 
 .journal-spread {
   /* background-image: url('../images/IMGS/dot-grid.png'); */
@@ -21,6 +27,7 @@
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: whitesmoke;
   border-radius: 1px;
+
   
 }
 
@@ -42,5 +49,140 @@
   padding: 12px 20px;
   border: none;
   border-bottom: 1px solid black;
+}
+
+.selector-title {
+  text-align: center;
+}
+
+.left-page {
+  display: flex;
+  flex-direction: column;
+  width: 42%;
+  /* justify-content: space-around; */
+}
+
+.right-page {
+  width: 52%;
+}
+
+#dashboard {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+
+#dashboard-container {
+  /* background-image: url('../assets/bujo-images/svgs/potential.svg'); */
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
+  
+}
+
+
+#months-container{
+  display: flex;
+  justify-content: space-around;
+  
+  
+
+}
+
+h5 {
+  text-align: center;
+}
+
+h2 {
+  margin: 0;
+  padding-bottom: 3%;
+}
+
+.month-card {
+  
+  box-shadow: 0 4px 8px 0 rgba(42,222,40);
+  /* 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
+}
+
+/* neongreen: rgb(109,241,45);
+green: rgb(42,222,40);
+cyan: rgb(35,206,253);
+blue: rgb(17,98,250);
+purple: 'rgb(132,37,250)';
+pink: rgb(251,37,231);
+darkpink: rgb(251,17,91);
+red: rgb(252,29,28);
+redorange: rgb(252,67,30);
+orange: rgb(253,112,34);
+ltorange: rgb(253,162,40);
+yellow: rgb(253,222,50); */
+
+.month-card:nth-child(2) {
+   box-shadow: 0 4px 8px 0 rgba(35,206,253);
+}
+.month-card:nth-child(3) {
+   box-shadow: 0 4px 8px 0 rgba(17,98,250);
+}
+.month-card:nth-child(4) {
+   box-shadow: 0 4px 8px 0 rgba(132,37,250);
+}
+.month-card:nth-child(5) {
+   box-shadow: 0 4px 8px 0 rgba(251,37,231);
+}
+.month-card:nth-child(6) {
+   box-shadow: 0 4px 8px 0 rgba(252,29,28);
+}
+.month-card:nth-child(4) {
+   box-shadow: 0 4px 8px 0 rgba(17,98,250);
+}
+.month-card:nth-child(4) {
+   box-shadow: 0 4px 8px 0 rgba(17,98,250);
+}
+
+#month-items {
+  display: flex;
+  align-items: flex-start;
+  margin:0;
+}
+
+.tracker-grid {
+  display: flex;
+  /* border: 1px solid black; */
+}
+
+.grid-box {
+  width: 18px;
+  height: 18px;
+  border: 1px solid black;
+  border-radius: 50%;
+  cursor: pointer;
+
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+h2 {
+  text-align: center;
+  
+  
+}
+
+.day {
+  padding: 6px;
+  font-size: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.water-container {
+  display: flex;
+  justify-content: space-around;
+  
 }
 

@@ -29,6 +29,7 @@ const Timer = () => {
           colors={[["#23CEFD", 0.33], ["#FB25E7", 0.33]]}
           onComplete={() => [false, 1000]}
           trailColor={"white"}
+          size={120}
         >
           {renderTime}
         </CountdownCircleTimer>

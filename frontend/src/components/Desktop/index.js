@@ -36,11 +36,10 @@ function Desktop({ isLoaded }) {
             <button onClick={logout}>Log Out</button>
           </div>
         </div>
+        {/* <Timer /> */}
         <div id="open-journal">
           <OpenJournal />
         </div>
-
-        <Timer />
       </div>
     );
   } else {

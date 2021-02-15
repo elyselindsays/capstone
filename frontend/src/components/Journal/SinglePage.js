@@ -4,12 +4,18 @@ import { useParams } from 'react-router-dom';
 import { addNewItem, getListItemsByPageId, toggleItem } from '../../store/items';
 import ProgressBar from 'react-customizable-progressbar';
 import Tracker from '../Templates/Tracker';
+import Tracker2 from '../Templates/Tracker2';
+import Goals from '../Templates/Goals';
+import Hydration from '../Templates/Hydration';
 
 
 const SinglePage = ({ id, title, pageType }) => {
   const dispatch = useDispatch();
   const items = useSelector(state => state.items);
+  const page = useSelector(state => state.journals.myPages[id])
   const [text, setText] = useState('');
+
+  console.log(page.pageType);
 
   let trackerProgress;
   let trackerLength;
@@ -47,32 +53,24 @@ const SinglePage = ({ id, title, pageType }) => {
   }
 
 
-  if (pageType === 'list') {
+  if (page.pageType === 'list') {
     return (
-      <>
-        <h2>{title}</h2>
-        {itemsArr && itemsArr.map((item) => (
-          <div className='item' key={item.id}>
-            <label>
-              <input onChange={handleCheck} type="checkbox" className="check-custom" />
-              <span className="check-toggle"></span>
-            </label>
-            <h3>{item.text}</h3>
-          </div>
-        ))}
-        <form onSubmit={itemSubmit}>
-          <input onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Add to list" />
-        </form>
-        <p>Total: {itemsArr.length}</p>
-        <ProgressBar progress={currentProgress} radius={100} steps={itemsArr.length} />
-        <div id='grid-container'></div>
-      </>
+      <Tracker2 id={id} title={title} />
     )
-  } else if (pageType === 'tracker') {
+  } else if (page.pageType === 'tracker') {
     return (
       <Tracker id={id} title={title} />
     )
-  } else if (pageType === 'notes') {
+  } else if (page.pageType === 'goals') {
+    return (
+      <Goals id={id} title={title} />
+    )
+  } else if (page.pageType === 'hydration') {
+    return (
+      <Hydration id={id} title={title} />
+    )
+  }
+  else if (page.pageType === 'notes') {
     return (
       <>
         <h2>{title}</h2>

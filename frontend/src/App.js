@@ -24,9 +24,7 @@ function App() {
           <Route exact path="/" >
             <Desktop isLoaded={isLoaded} />
           </Route>
-          <Route path="/stickies">
-            <Stickies />
-          </Route>
+
           <Route path="/signup">
             <SignupFormPage />
           </Route>

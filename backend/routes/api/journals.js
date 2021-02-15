@@ -65,12 +65,12 @@ router.get(`/items/:pageId`, restoreUser, asyncHandler(async (req, res) => {
 // add new page
 router.post('/pages', restoreUser, asyncHandler(async (req, res) => {
   const { user } = req;
-  const { title, journalId } = req.body;
+  const { title, pageType } = req.body;
   const newPage = await Page.create({
     title,
-    journalId,
+    // journalId,
     userId: user.id,
-    // pageType
+    pageType
   })
   return res.json(newPage)
 }))
