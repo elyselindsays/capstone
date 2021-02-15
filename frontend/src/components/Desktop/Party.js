@@ -1,41 +1,46 @@
-// import React, { useState } from 'react'
-// import { storiesOf } from '@storybook/react'
-// import { action } from '@storybook/addon-actions'
-// import SizedConfetti from './SizedConfetti'
-// import './party.css'
+import React, { useState } from 'react'
+import Confetti from 'react-confetti';
+import useWindowSize from 'react-use/lib/useWindowSize';
+
 
 // const confettiCompleteAction = action('Confetti Complete')
 
-// const PartyMode = () => {
-//   const [party, setParty] = useState(false)
-//   return (
-//     <div className={'root' + (party ? ' party' : '')}>
-//       <SizedConfetti
-//         style={{ pointerEvents: 'none' }}
-//         numberOfPieces={party ? 500 : 0}
-//         recycle={false}
-//         onConfettiComplete={confetti => {
-//           confettiCompleteAction()
-//           setParty(false)
-//           confetti.reset()
-//         }}
-//       />
-//       <div className="party-container">
-//         <button
-//           onClick={() => setParty(!party)}
-//           className="party-button"
-//           autoFocus
-//         >
-//           Party
-//         </button>
-//       </div>
-//     </div>
-//   )
-// }
+const PartyMode = () => {
+  const { width, height } = useWindowSize()
+  const [party, setParty] = useState(false)
+  return (
+    <div className={'root' + (party ? ' party' : '')}>
+      <Confetti
+        // wind={.5}
+        gravity={1}
+        initialVelocityY={{
+          range: true,
+          min: 10,
+          max: 20,
+          step: 0.1,
+        }}
 
-// storiesOf('Props|Demos', module)
-//   .add('Party', () => (
-//     <PartyMode />
-//   ), {
-//     notes: 'Illustrates how manipulating the `numberOfPieces` can be used with a boolean state variable, as well as the `onConfettiComplete` event to reset the particle generator when `recycle` is false.',
-//   })
+        numberOfPieces={party ? 500 : 0}
+        width={width}
+        height={height}
+        recycle={false}
+        onConfettiComplete={confetti => {
+
+          setParty(false)
+          confetti.reset()
+        }}
+      />
+      <div className="party-container">
+        <button
+          onClick={() => setParty(!party)}
+          className="party-button"
+          autoFocus
+        >
+          Party
+        </button>
+      </div>
+    </div>
+  )
+}
+
+export default PartyMode;

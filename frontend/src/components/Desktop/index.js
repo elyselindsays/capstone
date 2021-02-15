@@ -3,14 +3,10 @@ import { NavLink } from 'react-router-dom';
 import { useSelector, useDispatch, } from 'react-redux';
 import LoginFormModal from '../LoginFormModal';
 import './Desktop.css';
-import JournalList from '../Journal';
-import ParkingLot from '../ParkingLot';
-import OpenJournal from '../Journal/OpenJournal';
-import Timer from './Timer';
-import { addNewJournal, getUserJournals } from '../../store/journals';
+import OpenNotebook from '../Journal/OpenNotebook';
 import * as sessionActions from '../../store/session';
 import image from '../images/vecteezy_isometric-workspace-with-modern-style_217557/desk.jpg';
-// import PartyMode from './Party';
+import PartyMode from './Party';
 
 function Desktop({ isLoaded }) {
   const sessionUser = useSelector(state => state.session.user);
@@ -38,7 +34,7 @@ function Desktop({ isLoaded }) {
         </div>
         {/* <Timer /> */}
         <div id="open-journal">
-          <OpenJournal />
+          <OpenNotebook />
         </div>
       </div>
     );
@@ -63,6 +59,7 @@ function Desktop({ isLoaded }) {
       <div id="desktop-container">
         {isLoaded && splashPage}
       </div>
+      <PartyMode />
     </>
   );
 }
