@@ -37,7 +37,7 @@ const OpenJournal = () => {
   const params = useParams();
   const journals = useSelector(state => state.journals)
   const { journalId } = params;
-  console.log(journalId)
+
   const currentJournalObj = journals.myJournals[journalId]
 
 
@@ -90,10 +90,6 @@ const OpenJournal = () => {
         </div>
         <div className="journal-spread right-page">
           {currentPage}
-          {/* <Goals /> */}
-          {/* <Tracker /> */}
-          {/* <Tracker2 /> */}
-          {/* <Hydration /> */}
         </div>
       </div>
     </>
