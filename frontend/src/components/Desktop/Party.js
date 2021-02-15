@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import Confetti from 'react-confetti';
-import useWindowSize from 'react-use/lib/useWindowSize';
+
 
 
 // const confettiCompleteAction = action('Confetti Complete')
 
 const PartyMode = () => {
-  const { width, height } = useWindowSize()
+
   const [party, setParty] = useState(false)
   return (
     <div className={'root' + (party ? ' party' : '')}>
@@ -21,8 +21,7 @@ const PartyMode = () => {
         }}
 
         numberOfPieces={party ? 500 : 0}
-        width={width}
-        height={height}
+
         recycle={false}
         onConfettiComplete={confetti => {
 
