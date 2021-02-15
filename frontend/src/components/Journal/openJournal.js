@@ -9,7 +9,7 @@
 // import { getListItemsByPageId } from '../../store/items';
 // import * as sessionActions from '../../store/session';
 // import Timer from '../Desktop/Timer';
-// import CreateModal from './CreateModal';
+// import PageModal from './PageModal';
 // import Tracker2 from '../Templates/Tracker2';
 // import List from '../Templates/Goals';
 // import Goals from '../Templates/Goals';
@@ -81,7 +81,7 @@
 //             {index}
 //             <div>
 //               <button onClick={() => setModal(!modal)}>Add a Page</button>
-//               {modal && <CreateModal journalId={journalId} />}
+//               {modal && <PageModal journalId={journalId} />}
 //             </div>
 //             <div id='timer-container'>
 //               <Timer />
