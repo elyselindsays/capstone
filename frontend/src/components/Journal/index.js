@@ -66,18 +66,7 @@ const JournalList = () => {
   return (
     <>
       {journalView}
-      <div>
-        <h3>Create a new journal</h3>
-        <button style={{ fontSize: 65, cursor: "pointer" }} onClick={() => setShowModal(true)}>+</button>
-        {showModal && (
-          <div id='title-modal' className='modal'>
-            <form onSubmit={handleSubmit}>
-              <input type="text" value={title} onChange={(e) => setTitle(e.target.value)} placeholder="Journal Title"></input>
-              <button>submit</button>
-            </form>
-          </div>
-        )}
-      </div>
+
     </>
 
   )

@@ -33,9 +33,9 @@ export const getUserJournals = () => async (dispatch) => {
   return res;
 }
 
-export const getPagesByJournalId = (journalId) => async (dispatch) => {
+export const getPagesByUserId = (userId) => async (dispatch) => {
 
-  const res = await fetch(`/api/journals/${journalId}/pages/`);
+  const res = await fetch(`/api/journals/pages/`);
   dispatch(setPages(res.data))
 
 }

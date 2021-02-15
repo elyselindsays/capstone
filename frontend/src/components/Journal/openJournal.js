@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
-import { getPagesByJournalId } from '../../store/journals';
+import { getPagesByUserId } from '../../store/journals';
 import './Journal.css';
 import SinglePage from './SinglePage';
 import Tracker from '../Templates/Tracker';
@@ -10,6 +10,9 @@ import { getListItemsByPageId } from '../../store/items';
 import * as sessionActions from '../../store/session';
 import Timer from '../Desktop/Timer';
 import CreateModal from './CreateModal';
+import Tracker2 from '../Templates/Tracker2';
+import List from '../Templates/Goals';
+import Goals from '../Templates/Goals';
 
 
 const OpenJournal = () => {
@@ -37,9 +40,9 @@ const OpenJournal = () => {
   const currentJournalObj = journals.myJournals[journalId]
 
 
-  useEffect(() => {
-    dispatch(getPagesByJournalId(journalId))
-  }, [])
+  // useEffect(() => {
+  //   dispatch(getPagesByUserId(sessionUser.id))
+  // }, [])
 
 
   let pagesArr;
@@ -66,19 +69,11 @@ const OpenJournal = () => {
 
   return (
     <>
-      <div id="desktop">
-        <div id="desktop-nameplate">
-          <div id="desktop-plate-text">{sessionUser.firstName}'s Desktop</div>
-          <div>
-            <button onClick={logout}>Log Out</button>
-          </div>
-        </div>
-        <Timer />
-      </div>
+
 
       <div id="journal-container">
         <div className="journal-spread left-page">
-          <h1>{currentJournalObj.title}</h1>
+          <h1>Dashboard</h1>
           {index}
           <div>
             <button onClick={() => setModal(true)}>Add a Page</button>
@@ -86,7 +81,8 @@ const OpenJournal = () => {
           </div>
         </div>
         <div className="journal-spread right-page">
-          {currentPage}
+          {/* {currentPage} */}
+          <Goals />
         </div>
       </div>
     </>

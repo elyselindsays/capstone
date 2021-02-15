@@ -36,10 +36,11 @@ function Desktop({ isLoaded }) {
             <button onClick={logout}>Log Out</button>
           </div>
         </div>
-        <JournalList />
+        <div id="open-journal">
+          <OpenJournal />
+        </div>
+
         <Timer />
-        {/* <ParkingLot /> */}
-        {/* <PartyMode /> */}
       </div>
     );
   } else {

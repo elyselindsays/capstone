@@ -3,13 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { addNewItem, getListItemsByPageId, toggleItem } from '../../store/items';
 import ProgressBar from 'react-customizable-progressbar';
 
-const Tracker = ({ id, title }) => {
+const Tracker2 = ({ id, title }) => {
   const dispatch = useDispatch();
   const items = useSelector(state => state.items);
-  const timeArr = [7, 31, 365];
-  const [weekly, monthly, yearly] = timeArr;
   const [text, setText] = useState('');
-  const [amount, setAmount] = useState(monthly)
   const [checked, setChecked] = useState(false)
 
   const trackerArr = []
@@ -73,11 +70,11 @@ const Tracker = ({ id, title }) => {
       <form onSubmit={itemSubmit}>
         <input onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Add to list" />
       </form>
-      <p>Total: {itemsArr.length}</p>
+      {/* <p>Total: {itemsArr.length}</p> */}
       <ProgressBar progress={trackerProgress} steps={trackerLength} radius={100} />
       <div id='grid-container'></div>
     </>
   )
 }
 
-export default Tracker;
+export default Tracker2;
