@@ -50,11 +50,12 @@ export const addNewJournal = (title) => async (dispatch) => {
   dispatch(addJournal(res.data));
 }
 
-export const addNewPage = (title) => async (dispatch) => {
+export const addNewPage = (title, journalId) => async (dispatch) => {
   const res = await fetch('/api/journals/pages/', {
     method: 'POST',
     body: JSON.stringify({
-      title: title
+      title: title,
+      journalId
     })
   })
   dispatch(addPage(res.data));

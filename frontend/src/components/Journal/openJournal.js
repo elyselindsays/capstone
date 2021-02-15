@@ -9,6 +9,7 @@ import Notes from '../Templates/Notes';
 import { getListItemsByPageId } from '../../store/items';
 import * as sessionActions from '../../store/session';
 import Timer from '../Desktop/Timer';
+import CreateModal from './CreateModal';
 
 
 const OpenJournal = () => {
@@ -27,7 +28,6 @@ const OpenJournal = () => {
   };
 
 
-
   const [modal, setModal] = useState();
   const [currentPage, setCurrentPage] = useState(notebookSplash);
   const params = useParams();
@@ -35,9 +35,6 @@ const OpenJournal = () => {
   const { journalId } = params;
   console.log(journalId)
   const currentJournalObj = journals.myJournals[journalId]
-  // const pageId = page.id;
-
-
 
 
   useEffect(() => {
@@ -50,12 +47,6 @@ const OpenJournal = () => {
     pagesArr = Object.values(journals.myPages);
   }
 
-  console.log(pagesArr)
-
-  // const handlePageChange = (page) => {
-  //   setCurrentPage(<SinglePage id={page.id} title={page.title} />);
-  // }
-
 
   let index;
   if (pagesArr) {
@@ -64,9 +55,7 @@ const OpenJournal = () => {
         <h3>Table of Contents</h3>
         {pagesArr.map((page) => (
           <div key={page.id} className='page-cover' >
-            {/* <Link to={`/journals/${journalId}/${page.id}`}> */}
-            <h3 onClick={() => setCurrentPage(<SinglePage id={page.id} title={page.title} />)} value={page.id}>{page.title}</h3>
-            {/* </Link> */}
+            <h4 onClick={() => setCurrentPage(<SinglePage id={page.id} title={page.title} />)} value={page.id}>{page.title}</h4>
           </div>
         ))
         }
@@ -91,6 +80,10 @@ const OpenJournal = () => {
         <div className="journal-spread left-page">
           <h1>{currentJournalObj.title}</h1>
           {index}
+          <div>
+            <button onClick={() => setModal(true)}>Add a Page</button>
+            {modal && <CreateModal journalId={journalId} />}
+          </div>
         </div>
         <div className="journal-spread right-page">
           {currentPage}

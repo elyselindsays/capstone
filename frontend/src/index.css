@@ -1,3 +1,27 @@
+
+/* COLORS 
+
+neongreen: rgb(109,241,45);
+green: rgb(42,222,40);
+cyan: rgb(35,206,253);
+blue: rgb(17,98,250);
+purple: rgb(132,37,250);
+pink: rgb(251,37,231);
+darkpink: rgb(251,17,91);
+red: rgb(252,29,28);
+redorange: rgb(252,67,30);
+orange: rgb(253,112,34);
+ltorange: rgb(253,162,40);
+yellow: rgb(253,222,50);
+
+
+
+*/
+
+
+
+
+
 * {
   box-sizing: border-box;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -27,102 +51,13 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-color: lightcyan;
+  /* background-color: lightcyan; */
 }
 
 
 button:disabled,
 button:disabled:hover {
   opacity: 0.5;
-}
-
-/* https://projects.lukehaas.me/css-loaders/ , Loader #3 */
-.loader {
-  font-size: 10px;
-  margin: 50px auto;
-  text-indent: -9999em;
-  width: 5em;
-  height: 5em;
-  border-radius: 50%;
-  background: var(--redux-color);
-  background: -moz-linear-gradient(
-    left,
-    var(--redux-color) 10%,
-    rgba(128, 0, 255, 0) 42%
-  );
-  background: -webkit-linear-gradient(
-    left,
-    var(--redux-color) 10%,
-    rgba(128, 0, 255, 0) 42%
-  );
-  background: -o-linear-gradient(
-    left,
-    var(--redux-color) 10%,
-    rgba(128, 0, 255, 0) 42%
-  );
-  background: -ms-linear-gradient(
-    left,
-    var(--redux-color) 10%,
-    rgba(128, 0, 255, 0) 42%
-  );
-  background: linear-gradient(
-    to right,
-    var(--redux-color) 10%,
-    rgba(128, 0, 255, 0) 42%
-  );
-  position: relative;
-  -webkit-animation: load3 1.4s infinite linear;
-  animation: load3 1.4s infinite linear;
-  -webkit-transform: translateZ(0);
-  -ms-transform: translateZ(0);
-  transform: translateZ(0);
-}
-
-.loader:before {
-  width: 50%;
-  height: 50%;
-  background: var(--redux-color);
-  border-radius: 100% 0 0 0;
-  position: absolute;
-  top: 0;
-  left: 0;
-  content: '';
-}
-
-.loader:after {
-  background: #ffffff;
-  width: 75%;
-  height: 75%;
-  border-radius: 50%;
-  content: '';
-  margin: auto;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-}
-
-@-webkit-keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes load3 {
-  0% {
-    -webkit-transform: rotate(0deg);
-    transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-    transform: rotate(360deg);
-  }
 }
 
 
@@ -133,11 +68,6 @@ button:disabled:hover {
 .hidden {
   display: none;
 }
-
-
-
-
-
 
 
 .new-todo,
@@ -169,14 +99,6 @@ button:disabled:hover {
   position: relative;
   z-index: 2;
   border-top: 1px solid #e6e6e6;
-}
-
-.todoapp section.todo-list {
-  margin: 0;
-}
-
-.toggle-all:checked + label:before {
-  color: #737373;
 }
 
 .todo-list {
@@ -317,83 +239,7 @@ ul.todo-list {
   width: 0.6875em;
 }
 
-.footer {
-  padding: 10px 15px;
-  text-align: center;
-  font-size: 15px;
-  display: flex;
-  justify-content: space-between;
-  border-top: 1px solid #e6e6e6;
-}
 
-
-
-.footer .actions {
-  display: flex;
-  flex-direction: column;
-}
-
-
-
-.todo-count strong {
-  font-weight: 600;
-}
-
-.filters {
-  text-align: left;
-}
-
-.filters ul {
-  margin: 0;
-  padding: 0;
-  text-align: left;
-  list-style: none;
-}
-
-.filters.statusFilters li button {
-  color: inherit;
-  margin: 3px;
-  padding: 3px 7px;
-  text-decoration: none;
-  border: 2px solid transparent;
-  border-radius: 3px;
-  cursor: pointer;
-  background: unset !important;
-}
-
-.filters.statusFilters li button:hover {
-  border-color: rgba(175, 47, 47, 0.1);
-}
-
-.filters.statusFilters li button.selected {
-  border-color: rgba(175, 47, 47, 0.3);
-}
-
-.filters.colorFilters .color-block {
-  display: inline-block;
-  width: 20px;
-  height: 12px;
-  border-radius: 3;
-  margin-left: 5px;
-  margin-right: 5px;
-}
-
-
-
-
-.info p {
-  line-height: 1;
-}
-
-.info a {
-  color: inherit;
-  text-decoration: none;
-  font-weight: 400;
-}
-
-.info a:hover {
-  text-decoration: underline;
-}
 
 /*
 	Hack to remove background from Mobile Safari.
