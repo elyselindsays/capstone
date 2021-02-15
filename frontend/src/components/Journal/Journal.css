@@ -10,12 +10,16 @@
 }
 
 #index-container {
-  background-color: rgba(146, 48, 202, .1);
+  /* background-color: rgba(146, 48, 202, .1); */
 }
 
 
 h3 {
   text-align: center;
+}
+
+#pageclick {
+  cursor: pointer;
 }
 
 
@@ -186,3 +190,59 @@ h2 {
   
 }
 
+#flagsimg {
+  width: 95%;
+}
+
+
+#braindump-input {
+  text-align: center;
+
+}
+
+#braindump-container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+#flag1 {
+  background-image: url('../assets/bujo-images/blue-sticky.png');
+}
+
+#contents {
+  text-align: left;
+}
+
+#templates-container {
+  position:absolute;
+  justify-self: flex-end;
+  left: 450px;
+  cursor: pointer;
+  background-color: greenyellow;
+  /* text-align: right; */
+}
+
+.container {
+  /* background-image: url('../assets/bujo-images/turq-sticky.png'); */
+  background-color: yellow;
+  width: max-content;
+  padding: 10px;
+  background-size: cover;
+  position: absolute;
+}
+
+#top-dash {
+  display: flex;
+  justify-content: space-between;
+}
+
+#timer-container {
+  position: relative;
+}
+
+#add-page-box {
+  position: relative;
+  justify-self: center;
+  bottom: 30px;
+}

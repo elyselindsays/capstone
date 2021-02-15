@@ -50,7 +50,7 @@ const PageModal = () => {
 
 
   return (
-    <div>
+    <div id="templates-container">
       {lists.map(list => (
         <div key={list.id} id="add-page">
           <div value={list} className="page-template-icon" onClick={addList}>{list}</div>

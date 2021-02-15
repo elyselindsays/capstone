@@ -8,9 +8,19 @@ h1 {
   /* margin-bottom: 40px; */
 }
 
+.App {
+  display: flex;
+  padding: 1px;
+  flex-direction: column;
+  justify-content: center;
+}
+
+
+
 .timer-wrapper {
   display: flex;
   justify-content: center;
+  padding-bottom: 15px;;
 }
 
 .timer {
@@ -81,4 +91,10 @@ h1 {
 #open-journal {
   padding: 2rem;
 
+}
+
+#add-page-box {
+  display: flex;
+  justify-content: center;
+  position: relative;
 }

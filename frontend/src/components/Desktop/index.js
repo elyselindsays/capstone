@@ -45,7 +45,10 @@ function Desktop({ isLoaded }) {
         <div className='modal'>
           <LoginFormModal />
           <button onClick={demoLogin}>Demo Login</button>
-          <NavLink to="/signup">Sign Up</NavLink>
+          <NavLink to="/signup">
+            <button onClick={demoLogin}>Sign Up</button>
+
+          </NavLink>
         </div>
         <div className='background'>
           <img className='background' src={image} alt="desk"></img>
