@@ -28,12 +28,12 @@ function App() {
           <Route path="/signup">
             <SignupFormPage />
           </Route>
-          <Route path="/journals/:journalId">
+          {/* <Route path="/journals/:journalId">
             <OpenJournal />
-          </Route>
-          <Route path="/journals/:journalId/:pageId">
+          </Route> */}
+          {/* <Route path="/journals/:journalId/:pageId">
             <SinglePage />
-          </Route>
+          </Route> */}
         </>
 
       )}
