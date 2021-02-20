@@ -36,10 +36,10 @@ const Timer = () => {
         </CountdownCircleTimer>
       </div>
       {timer && (
-        <button onClick={() => setTimer(!timer)}>Start Timer</button>
+        <button onClick={() => setTimer(!timer)}>Pause Timer</button>
       )}
       {!timer && (
-        <button onClick={() => setTimer(!timer)}>Pause Timer</button>
+        <button onClick={() => setTimer(!timer)}>Start Timer</button>
       )}
     </div>
   )

@@ -14,9 +14,9 @@ const addListItem = (item) => ({
   payload: item
 })
 
-const toggleComplete = (itemId) => ({
+const toggleComplete = (item) => ({
   type: TOGGLE_COMPLETE,
-  payload: itemId
+  payload: item
 })
 
 
@@ -85,9 +85,17 @@ function reducer(state = initialState, action) {
         }
       }
     }
-    // case TOGGLE_COMPLETE: {
-    //   const item = action.payload
-    // }
+    case TOGGLE_COMPLETE: {
+      const item = action.payload
+      console.log(item)
+      return {
+        ...state,
+        listItems: {
+          ...state.listItems,
+          [item.id]: item
+        }
+      }
+    }
     default:
       return state;
   }

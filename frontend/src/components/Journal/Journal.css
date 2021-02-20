@@ -6,6 +6,7 @@
   padding-top: 12px;
   padding-bottom: 12px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  height: 780px;
   /* text-align: center; */
 }
 
@@ -13,6 +14,13 @@
   /* background-color: rgba(146, 48, 202, .1); */
 }
 
+.tabs {
+  writing-mode: vertical-rl;
+}
+
+.tabs-container {
+  display: flex;
+}
 
 h3 {
   text-align: center;
@@ -27,7 +35,7 @@ h3 {
   /* background-image: url('../images/IMGS/dot-grid.png'); */
   width: 48%;
   padding: 2%;
-  height: 650px;
+  height: 750px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   background-color: whitesmoke;
   border-radius: 1px;
@@ -104,6 +112,8 @@ h2 {
 }
 
 .month-card {
+  height: 80px;
+  width: 200px;
   
   box-shadow: 0 4px 8px 0 rgba(42,222,40);
   /* 0 6px 20px 0 rgba(0, 0, 0, 0.19); */
@@ -191,6 +201,7 @@ h2 {
 .water-container {
   display: flex;
   justify-content: space-around;
+  cursor: pointer;
   
 }
 
@@ -220,8 +231,9 @@ h2 {
 
 #templates-container {
   position:absolute;
-  justify-self: flex-end;
-  left: 450px;
+  align-self: center;
+  /* display: flex; */
+  
   cursor: pointer;
   background-color: greenyellow;
   /* text-align: right; */

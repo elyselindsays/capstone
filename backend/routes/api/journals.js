@@ -47,7 +47,6 @@ router.post('/', restoreUser, asyncHandler(async (req, res, next) => {
 }))
 
 
-
 // GET  /api/journals/items/:title
 router.get(`/items/:pageId`, restoreUser, asyncHandler(async (req, res) => {
   const { user } = req;
@@ -93,6 +92,23 @@ router.post(`/items/:pageId`, restoreUser, asyncHandler(async (req, res) => {
 
   return res.json(newItem);
 }))
+
+
+
+// TOGGLE COMPLETE
+// PATCH 
+router.patch(`/items/:itemId`, restoreUser, asyncHandler(async (req, res) => {
+  const { complete } = req.body;
+  const { itemId } = req.params;
+  const updatedItem = await ListItem.findByPk(itemId)
+  await updatedItem.update({
+    complete: true,
+  })
+
+  return res.json(updatedItem);
+}))
+
+
 
 
 

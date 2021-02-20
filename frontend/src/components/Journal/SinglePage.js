@@ -28,7 +28,7 @@ const SinglePage = ({ id, title, pageType }) => {
 
   useEffect(() => {
     dispatch(getListItemsByPageId(id))
-  }, [id]);
+  }, [dispatch, id]);
 
 
   const makeGrid = () => {
@@ -42,15 +42,7 @@ const SinglePage = ({ id, title, pageType }) => {
     setText('')
   }
 
-  const handleCheck = (e) => {
-    console.log(e.target.checked);
-    if (e.target.checked) {
-      currentProgress += 1;
-      // remove from itemsArr
-      // dispatch toggleItem()
-      // maybe strikethrough?
-    }
-  }
+
 
 
   if (page.pageType === 'list') {

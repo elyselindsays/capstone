@@ -35,6 +35,7 @@ const Goals = ({ id, title = 'Monthly Goals' }) => {
     <>
       <div className='selector-title'>
         <h2>{title}</h2>
+        <hr></hr>
       </div>
       <div id='months-container'>
         <div className='months-column'>

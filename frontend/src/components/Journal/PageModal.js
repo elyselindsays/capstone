@@ -35,7 +35,7 @@ const PageModal = () => {
 
   const lists = ["To-Do List", "Weekly Goals", "Yearly Goals", "Bucket List", "Shopping List", "Cleaning List", "Grocery List", "Packing List"];
 
-  const trackers = ["Habit Tracker", "Mood Tracker"];
+  const tracker = "Habit Tracker";
 
   const goals = 'Monthly Goals';
 
@@ -49,26 +49,30 @@ const PageModal = () => {
 
 
 
-  return (
-    <div id="templates-container">
-      {lists.map(list => (
-        <div key={list.id} id="add-page">
-          <div value={list} className="page-template-icon" onClick={addList}>{list}</div>
-        </div>
-      ))}
-      {trackers.map(tracker => (
-        <div key={tracker.id} id="add-page">
-          <div value={tracker} className="page-template-icon" onClick={addTracker}>{tracker}</div>
-        </div>
-      ))}
-      <div value={hydration} className="page-template-icon" onClick={addHydration}>{hydration}</div>
-      <div value={goals} className="page-template-icon" onClick={addGoals}>{goals}</div>
-      {nonCheckLists.map(list => (
-        <div key={list.id} id="add-page">
-          <div value={list} className="page-template-icon" onClick={addTracker}>{list}</div>
-        </div>
-      ))}
 
+
+  return (
+    <div className='overlay'>
+      <div id="templates-container" >
+        <h4>Page Templates</h4>
+        {lists.map(list => (
+          <div key={list.id} id="add-page">
+            <div value={list} className="page-template-icon" onClick={addList}>{list}</div>
+          </div>
+        ))}
+        <div id="add-page">
+          <div value={tracker} className="page-template-icon" onClick={addTracker}>{tracker}</div>AZ
+      </div>
+
+        <div value={hydration} className="page-template-icon" onClick={addHydration}>{hydration}</div>
+        <div value={goals} className="page-template-icon" onClick={addGoals}>{goals}</div>
+        {nonCheckLists.map(list => (
+          <div key={list.id} id="add-page">
+            <div value={list} className="page-template-icon" onClick={addTracker}>{list}</div>
+          </div>
+        ))}
+
+      </div>
 
     </div>
   )
