@@ -22,10 +22,6 @@ const Goals = ({ id, title = 'Monthly Goals' }) => {
   const colorsArr = ['rgb(109,241,45)', 'rgb(42,222,40)', 'rgb(35,206,253)', 'rgb(17,98,250)', 'rgb(132,37,250)', 'rgb(251,37,231)', 'rgb(251,17,91)', 'rgb(252,29,28)', 'rgb(252,67,30)', 'rgb(253,112,34)', 'rgb(253,162,40)', 'rgb(253,222,50)'];
 
 
-
-  let trackerProgress;
-  let trackerLength;
-  let currentProgress;
   const itemSubmit = (e) => {
     e.preventDefault();
     dispatch(addNewItem(id, text));

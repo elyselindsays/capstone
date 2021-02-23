@@ -15,6 +15,8 @@ import List from '../Templates/Goals';
 import Goals from '../Templates/Goals';
 import Hydration from '../Templates/Hydration';
 import flags from '../assets/bujo-images/—Pngtree—pack of bright sticky notes_3576205.png'
+import Challenge from '../Templates/Challenge';
+import BookList from '../Templates/Books';
 
 
 const OpenJournal = () => {
@@ -136,14 +138,16 @@ const OpenJournal = () => {
 
 
         <div className="journal-spread right-page">
-          {currentPage}
+          {/* {currentPage} */}
+          {/* <BookList /> */}
+          <Challenge />
         </div>
 
 
         <div className='tabs tabs-container'>
           {pagesArr.map((page) => (
             <div key={page.id} className='tabs-container' id="index-container">
-              <h4 className='tabs' onClick={() => setCurrentPage(<SinglePage id={page.id} title={page.title} />)} value={page.id}>{page.title}</h4>
+              <h4 className='tab' onClick={() => setCurrentPage(<SinglePage id={page.id} title={page.title} />)} value={page.id}>{page.title}</h4>
             </div>
           ))
           }

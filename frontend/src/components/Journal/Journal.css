@@ -16,6 +16,17 @@
 
 .tabs {
   writing-mode: vertical-rl;
+  
+}
+
+.tab {
+  background-color: rgb(251,37,231, .8);;
+  cursor: pointer;
+}
+
+#progress-bar-container {
+  display: flex;
+  justify-content: center;
 }
 
 .tabs-container {
@@ -132,6 +143,22 @@ orange: rgb(253,112,34);
 ltorange: rgb(253,162,40);
 yellow: rgb(253,222,50); */
 
+
+#bookshelf {
+  display: flex;
+  border: indigo 1px solid;
+  width: 20rem;
+  height: 30rem;
+}
+
+#row-1, #row-2, #row-3 {
+  border-bottom: 1px solid indigo;
+  width: 75%;
+}
+
+
+
+
 .month-card:nth-child(2) {
    box-shadow: 0 4px 8px 0 rgba(35,206,253);
 }
@@ -154,6 +181,24 @@ yellow: rgb(253,222,50); */
    box-shadow: 0 4px 8px 0 rgba(17,98,250);
 }
 
+#circles-container {
+  display: flex;
+  flex-direction: column;
+  padding: 1%;
+  padding-top: 4%;
+  line-height: 2.5;
+}
+
+.circle {
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.challenge {
+
+}
+
+
 #month-items {
   display: flex;
   align-items: flex-start;
@@ -163,6 +208,12 @@ yellow: rgb(253,222,50); */
 .tracker-grid {
   display: flex;
   /* border: 1px solid black; */
+}
+
+.input-box {
+  padding: 2%;
+  padding-top: 5%;
+  text-align: center;
 }
 
 .grid-box {

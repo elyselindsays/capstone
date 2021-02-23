@@ -33,6 +33,7 @@ const Tracker2 = ({ id, title }) => {
   return (
     <>
       <h2>{title}</h2>
+      <hr></hr>
       {
         itemsArr && itemsArr.map((item) => (
           <div className='item' key={item.id}>
@@ -49,9 +50,14 @@ const Tracker2 = ({ id, title }) => {
       <form onSubmit={itemSubmit}>
         <input onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Add to list" />
       </form>
-      <p>Total: {itemsArr.length}</p>
-      <ProgressBar progress={completedArr.length} steps={itemsArr.length} radius={100} />
-      <div id='grid-container'></div>
+      <div id='progress-bar-container'>
+        <ProgressBar progress={completedArr.length} steps={itemsArr.length} radius={100} cut={120} rotate={-210} fillColor="transparent" strokeWidth={28}
+          strokeColor="#ffce54"
+          strokeLinecap="butt"
+          trackStrokeWidth={14}
+          trackStrokeLinecap="butt" children={<h5>{completedArr.length}/{itemsArr.length}</h5>} />
+      </div>
+
     </>
   )
 }
