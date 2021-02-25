@@ -1,4 +1,4 @@
-import { useState } from 'react';
+
 import { useDispatch } from 'react-redux';
 import { addNewPage } from '../../store/journals';
 
@@ -42,13 +42,6 @@ const PageModal = () => {
   const nonCheckLists = ["Playlist", "Gift List", "Reading List", "Gratitude List", "Morning Routine", "Evening Routine",]
 
   const hydration = 'Hydration Tracker';
-
-
-
-
-
-
-
 
 
   return (

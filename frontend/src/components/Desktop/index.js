@@ -27,10 +27,10 @@ function Desktop({ isLoaded }) {
     splashPage = (
       <div id="desktop">
         <div id="desktop-nameplate">
-          <div id="desktop-plate-text">{sessionUser.firstName}'s Desktop</div>
+          {/* <div id="desktop-plate-text">{sessionUser.firstName}'s Desktop</div>
           <div>
             <button onClick={logout}>Log Out</button>
-          </div>
+          </div> */}
         </div>
         {/* <Timer /> */}
         <div id="open-journal">
