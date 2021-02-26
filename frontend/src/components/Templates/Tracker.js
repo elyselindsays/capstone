@@ -1,44 +1,32 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addNewItem, getListItemsByPageId, toggleItem } from '../../store/items';
 import ProgressBar from 'react-customizable-progressbar';
 
-const Tracker = ({ id, title = 'Monthly Tracker' }) => {
+const Tracker = ({ id, title }) => {
   const dispatch = useDispatch();
   const items = useSelector(state => state.items);
-  const timeArr = [7, 31, 365];
-  const [weekly, monthly, yearly] = timeArr;
+  // const page = useSelector(state => state.journals.myPages.id)
+
   const [text, setText] = useState('');
-  const [amount, setAmount] = useState(monthly)
-  const [checked, setChecked] = useState(false)
 
-  const trackerArr = []
+  const [checked, setChecked] = useState(false);
 
+  useEffect(() => {
+    dispatch(getListItemsByPageId(id))
+  }, [id]);
 
   let trackerProgress;
   let trackerLength;
-  let currentProgress;
 
   let itemsArr;
   if (items) {
     itemsArr = Object.values(items.listItems)
   }
 
-  // const handleCheck = (e) => {
-  //   console.log(e.target.checked);
-  //   if (e.target.checked) {
-  //     currentProgress += 1;
-  //     // remove from itemsArr
-  //     // dispatch toggleItem()
-  //     // maybe strikethrough?
-  //   }
-  // }
-
   const gridChecked = (e) => {
     e.target.style.backgroundColor = 'rgb(109, 241, 45)'
   }
-
-
 
   const itemSubmit = (e) => {
     e.preventDefault();
@@ -59,38 +47,41 @@ const Tracker = ({ id, title = 'Monthly Tracker' }) => {
                 <input onChange={handleCheck} type="checkbox" className="check-custom" />
                 <span className="check-toggle"></span>
               </label> */}
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-              <div onClick={gridChecked} className='grid-box'></div>
-
+              <div className='tracker-row'>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+              </div>
+              <div className='tracker-row'>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+                <div onClick={gridChecked} className='grid-box'></div>
+              </div>
             </div>
           </div>
         ))

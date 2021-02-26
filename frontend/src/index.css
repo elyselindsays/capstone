@@ -40,6 +40,8 @@ body {
 }
 body {
   /* min-height: 100%; */
+  width: 100%;
+  height: 95vh;
   /* background-color: powderblue; */
   background-image: url(./components/final-icons/pexels-aleksandar-pasaric-1323712.jpg);
   	background-position:initial;

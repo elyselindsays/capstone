@@ -21,6 +21,16 @@
   
 }
 
+.book-icon {
+  background-image: url(../final-icons/photo-processing/book-imgs/imageedit_5_8489626966.png);
+  	background-attachment: fixed;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		text-align: center;
+
+}
+
 .tab {
   background-color: rgb(251,37,231, .8);;
   cursor: pointer;
@@ -99,10 +109,11 @@ h3 {
 }
 
 #dashboard-container {
-  /* background-image: url('../assets/bujo-images/svgs/potential.svg'); */
+  /* background-image: url('../final-icons/photo-processing/border1.svg'); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: 100% 100%;
+  
   
 }
 
@@ -219,10 +230,12 @@ yellow: rgb(253,222,50); */
 }
 
 .grid-box {
-  width: 18px;
-  height: 18px;
-  border: 1px solid black;
-  border-radius: 50%;
+  width: 2rem;
+  height: 2rem;
+  border-right: 1px solid black;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
+  /* border-radius: 50%; */
   cursor: pointer;
 
 }

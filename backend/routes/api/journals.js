@@ -61,6 +61,18 @@ router.get(`/items/:pageId`, restoreUser, asyncHandler(async (req, res) => {
 }))
 
 
+router.get(`/items`, restoreUser, asyncHandler(async (req, res) => {
+  const { user } = req;
+  const items = await ListItem.findAll({
+    where: {
+      userId: user.id
+    }
+  });
+  return res.json(items);
+}))
+
+
+
 // add new page
 router.post('/pages', restoreUser, asyncHandler(async (req, res) => {
   const { user } = req;
@@ -109,7 +121,13 @@ router.patch(`/items/:itemId`, restoreUser, asyncHandler(async (req, res) => {
 }))
 
 
+router.delete(`/items/:itemId`, asyncHandler(async (req, res) => {
+  const { itemId } = req.params;
+  const item = await ListItem.findByPk(itemId)
+  await item.destroy();
+  return;
 
+}))
 
 
 

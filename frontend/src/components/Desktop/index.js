@@ -17,8 +17,7 @@ function Desktop({ isLoaded }) {
     dispatch(sessionActions.logout());
   };
 
-  const demoLogin = (e) => {
-    // e.preventDefault();
+  const demoLogin = () => {
     dispatch(sessionActions.login({ credential: 'demo@user.io', password: 'password' }));
   }
 
@@ -27,10 +26,10 @@ function Desktop({ isLoaded }) {
     splashPage = (
       <div id="desktop">
         <div id="desktop-nameplate">
-          {/* <div id="desktop-plate-text">{sessionUser.firstName}'s Desktop</div>
+          <div id="desktop-plate-text">{sessionUser.firstName}'s Desktop</div>
           <div>
             <button onClick={logout}>Log Out</button>
-          </div> */}
+          </div>
         </div>
         {/* <Timer /> */}
         <div id="open-journal">
@@ -62,10 +61,9 @@ function Desktop({ isLoaded }) {
       <div id="desktop-container">
         {isLoaded && splashPage}
       </div>
-      <div id='party-container'>
-
+      {/* <div id='party-container'>
         <PartyMode />
-      </div>
+      </div> */}
     </>
   );
 }

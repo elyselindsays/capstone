@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { addNewItem, getListItemsByPageId } from '../../store/items';
-
+import './Templates.css';
 
 const BookList = ({ id, title }) => {
   const dispatch = useDispatch();
@@ -34,8 +34,10 @@ const BookList = ({ id, title }) => {
       <div id='bookshelf'>
         {
           itemsArr && itemsArr.map((item) => (
-            <div className='item' key={item.id}>
+            <div className='book-icon' key={item.id}>
+              {/* <div className='book-icon'> */}
               <p className='book'>{item.text}</p>
+              {/* </div> */}
             </div>
           ))
         }

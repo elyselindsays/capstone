@@ -2,7 +2,8 @@ import { fetch } from './csrf.js';
 
 const SET_LIST_ITEMS = "/journals/items/SET_LIST_ITEMS";
 const ADD_LIST_ITEM = "/journals/items/ADD_LIST_ITEM";
-const TOGGLE_COMPLETE = "/journals/items/TOGGLE_COMPLETE"
+const TOGGLE_COMPLETE = "/journals/items/TOGGLE_COMPLETE";
+const REMOVE_ITEM = "/journals/items/REMOVE_ITEM";
 
 const setListItems = (items) => ({
   type: SET_LIST_ITEMS,
@@ -19,6 +20,10 @@ const toggleComplete = (item) => ({
   payload: item
 })
 
+const removeItem = () => ({
+  type: REMOVE_ITEM
+});
+
 
 export const getListItemsByTitle = (title) => async (dispatch) => {
   const res = await fetch(`/api/journals/items/${title}`);
@@ -30,6 +35,10 @@ export const getListItemsByPageId = (pageId) => async (dispatch) => {
   dispatch(setListItems(res.data))
 }
 
+export const getListItemsByUser = () => async (dispatch) => {
+  const res = await fetch(`/api/journals/items`);
+  dispatch(setListItems(res.data));
+}
 
 
 export const addNewItem = (id, text) => {
@@ -56,7 +65,18 @@ export const toggleItem = (itemId) => async (dispatch) => {
     })
   })
   dispatch(toggleComplete(res.data))
+};
+
+
+export const deleteItem = (itemId) => async (dispatch) => {
+  const res = await fetch(`/api/journals/items/${itemId}`, {
+    method: 'DELETE'
+  });
+  dispatch(removeItem());
+  return res;
 }
+
+
 
 const initialState = {
   listItems: {}
@@ -94,6 +114,13 @@ function reducer(state = initialState, action) {
           ...state.listItems,
           [item.id]: item
         }
+      }
+    }
+    case REMOVE_ITEM: {
+      const afterDelete = { ...state.listItems }
+      return {
+        ...state,
+        listItems: afterDelete
       }
     }
     default:

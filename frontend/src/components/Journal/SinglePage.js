@@ -6,6 +6,7 @@ import Hydration from '../Templates/Hydration';
 import Notes from '../Templates/Notes';
 import Challenge from '../Templates/Challenge';
 import BookList from '../Templates/Books';
+import Movies from '../Templates/Movies';
 
 
 const SinglePage = ({ id, title }) => {
@@ -31,7 +32,7 @@ const SinglePage = ({ id, title }) => {
       <Hydration id={id} title={title} />
     )
   }
-  else if (page.pageType === 'notes') {
+  else if (page.pageType === 'note') {
     return (
       <Notes id={id} title={title} />
     )
@@ -41,11 +42,16 @@ const SinglePage = ({ id, title }) => {
       <Challenge id={id} title={title} />
     )
   }
-  else if (page.pageType === 'books') {
+  else if (page.pageType === 'memory') {
     return (
       <BookList id={id} title={title} />
     )
   }
+  // else if (page.pageType === 'memory') {
+  //   return (
+  //     <Movies id={id} title={title} />
+  //   )
+  // }
 }
 
 export default SinglePage;

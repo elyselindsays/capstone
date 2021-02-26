@@ -4,27 +4,26 @@ import { useParams, Link } from 'react-router-dom';
 import { getPagesByUserId } from '../../store/journals';
 import './Journal.css';
 import SinglePage from './SinglePage';
-import Tracker from '../Templates/Tracker';
-import Notes from '../Templates/Notes';
-import { addNewItem, getListItemsByPageId } from '../../store/items';
+import { addNewItem, getListItemsByPageId, getListItemsByUser } from '../../store/items';
 import * as sessionActions from '../../store/session';
 import Timer from '../Desktop/Timer';
 import PageModal from './PageModal';
-import Tracker2 from '../Templates/Tracker2';
-import List from '../Templates/Goals';
-import Goals from '../Templates/Goals';
-import Hydration from '../Templates/Hydration';
-import flags from '../assets/bujo-images/—Pngtree—pack of bright sticky notes_3576205.png'
-import Challenge from '../Templates/Challenge';
-import BookList from '../Templates/Books';
+import flags from '../assets/bujo-images/—Pngtree—pack of bright sticky notes_3576205.png';
+import flagBanner from '../assets/bujo-images/flagbanner.svg';
+
 
 
 const OpenJournal = () => {
   const dispatch = useDispatch();
-  const items = useSelector(state => state.items);
-  const [text, setText] = useState('')
-
   const sessionUser = useSelector(state => state.session.user);
+  const items = useSelector(state => state.items);
+  const [text, setText] = useState('');
+  const [showModal, setShowModal] = useState();
+  const journals = useSelector(state => state.journals)
+  // const params = useParams();
+  // const { journalId } = params;
+  // const currentJournalObj = journals.myJournals[journalId]
+
 
   let itemsArr;
   if (items) {
@@ -46,33 +45,23 @@ const OpenJournal = () => {
         <input id="braindump-input" type="text" placeholder="Let it all out"></input>
       </form>
       <div id='braindump-container'>
-
         {itemsArr && itemsArr.map((item) => (
           <div className='item' key={item.id}>
             <h3>{item.text}</h3>
           </div>
         ))}
-
         <div>
           <img src={flags} alt={'flags'} id='flagsimg' />
         </div>
       </div>
     </div>
-  )
+  );
 
 
-
-  const [showModal, setShowModal] = useState();
   const [currentPage, setCurrentPage] = useState(notebookSplash);
-  const params = useParams();
-  const journals = useSelector(state => state.journals)
-  const { journalId } = params;
-
-  const currentJournalObj = journals.myJournals[journalId]
-
-
   useEffect(() => {
-    dispatch(getPagesByUserId(sessionUser.id))
+    dispatch(getPagesByUserId(sessionUser.id));
+    dispatch(getListItemsByUser());
   }, [])
 
   const openModal = () => {
@@ -101,7 +90,6 @@ const OpenJournal = () => {
     index = (
       <div className="container" >
         <h3 id='contents'>Table of Contents</h3>
-        {/* <h4 id="pageclick" onClick={() => setCurrentPage(<Tracker />)} >Habit Tracker</h4> */}
         {pagesArr.map((page) => (
           <div key={page.id} className='page-cover' >
             <h4 className="pageclick" onClick={() => setCurrentPage(<SinglePage id={page.id} title={page.title} />)} value={page.id}>{page.title}</h4>
@@ -119,8 +107,9 @@ const OpenJournal = () => {
 
         <div className="journal-spread left-page">
           <div id='dashboard-container'>
-            <h1>Dashboard</h1>
-            <hr></hr>
+            <h1 id="dashboard-title">Dashboard</h1>
+            {/* <img src={flagBanner} alt='flag-banner' /><img src={flagBanner} alt='flag-banner' /> */}
+
           </div>
           <div id="dashboard">
             <div id='top-dash'>
@@ -138,9 +127,9 @@ const OpenJournal = () => {
 
 
         <div className="journal-spread right-page">
-          {/* {currentPage} */}
+          {currentPage}
           {/* <BookList /> */}
-          <Challenge />
+          {/* <Challenge /> */}
         </div>
 
 
