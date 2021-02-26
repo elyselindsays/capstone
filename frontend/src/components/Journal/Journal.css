@@ -32,8 +32,16 @@
 }
 
 .tab {
-  background-color: rgb(251,37,231, .8);;
+  background-color: rgb(251,37,231);;
   cursor: pointer;
+  /* position: absolute; */
+  padding: .1rem;
+  right: .5rem;
+  
+}
+
+.tab:nth-child(2) {
+  background-color: rgb(253,222,50);
 }
 
 #progress-bar-container {
@@ -93,12 +101,13 @@ h3 {
 .left-page {
   display: flex;
   flex-direction: column;
-  width: 47%;
+  width: 46%;
   /* justify-content: space-around; */
 }
 
 .right-page {
-  width: 48%;
+  width: 49%;
+  position: relative;
 }
 
 #dashboard {
@@ -109,14 +118,19 @@ h3 {
 }
 
 #dashboard-container {
-  /* background-image: url('../final-icons/photo-processing/border1.svg'); */
+  /* background-image: url('../final-icons/photo-processing/greenborder.svg') ;
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 100% 100%;
+  background-size: 4rem, 15rem; */
+  border-image: url('../final-icons/photo-processing/greenborder.svg') 30;
   
   
 }
 
+#dashboard-title {
+  font-weight: 600;
+  font-size: 1.8em;
+}
 
 #months-container{
   display: flex;
@@ -293,21 +307,25 @@ h2 {
 
 #contents {
   text-align: left;
+  text-decoration: underline;
 }
 
 #templates-container {
   position:absolute;
   align-self: center;
   /* display: flex; */
-  
+  width: 70%;
   cursor: pointer;
-  background-color: greenyellow;
+  background-color: rgba(247, 241, 241, 0.959);
+  padding-top: 1.3rem;
+  padding-bottom: 1.3rem;
   /* text-align: right; */
+  border-radius: 32px;
 }
 
 .container {
   /* background-image: url('../assets/bujo-images/turq-sticky.png'); */
-  background-color: yellow;
+  /* background-color: yellow; */
   width: max-content;
   padding: 10px;
   background-size: cover;
@@ -327,4 +345,67 @@ h2 {
   position: relative;
   justify-self: center;
   bottom: 30px;
+}
+
+
+
+.template-categories {
+  display: flex;
+  justify-content: space-evenly;
+  font-size: 1.3rem;
+   padding-bottom: 1.3rem;
+
+
+
+}
+
+.template-headings {
+  font-size: 1.3rem;
+  padding: .5rem;
+  /* text-decoration: underline; */
+  /* margin-right: .5; */
+}
+
+#page-templates {
+  background-image: url(../assets/bujo-images/teal-flag.png) ;
+  background-size: 300px 80px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 1rem;
+  text-align: center;
+ 
+}
+
+.list-highlight {
+  background-color: rgba(233, 19, 19, 0.562);
+
+}
+
+.tracker-highlight {
+  background-color: rgba(42,222,40, .5);
+
+}
+
+.challenge-highlight {
+  background-color: rgba(251,37,231, .5);
+
+}
+
+.goal-highlight {
+  background-color: rgba(231, 228, 7, .5);
+
+}
+
+.memory-highlight {
+  background-color: rgba(132,37,250, .5);
+
+}
+
+.note-highlight {
+  background-color: rgba(17,98,250, .5);
+
+}
+
+.page-template-icon {
+  padding: .15rem;
 }

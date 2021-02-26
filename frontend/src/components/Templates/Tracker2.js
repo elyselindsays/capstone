@@ -51,11 +51,11 @@ const Tracker2 = ({ id, title }) => {
         <input onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Add to list" />
       </form>
       <div id='progress-bar-container'>
-        <ProgressBar progress={completedArr.length} steps={itemsArr.length} radius={100} cut={120} rotate={-210} fillColor="transparent" strokeWidth={28}
-          strokeColor="#ffce54"
-          strokeLinecap="butt"
-          trackStrokeWidth={14}
-          trackStrokeLinecap="butt" children={<h5>{completedArr.length}/{itemsArr.length}</h5>} />
+        <ProgressBar progress={completedArr.length} steps={itemsArr.length} radius={60} fillColor="transparent" strokeWidth={15}
+          strokeColor="#8425FA"
+          strokeLinecap="round"
+          trackStrokeWidth={12}
+          trackStrokeLinecap="round" children={<h5 className='inner-progress'>{completedArr.length}/{itemsArr.length}</h5>} />
       </div>
 
     </>

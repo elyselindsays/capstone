@@ -42,11 +42,13 @@ function Desktop({ isLoaded }) {
       <>
         <div className='overlay'></div>
         <div className='modal'>
-          <LoginFormModal />
+
+          <NavLink to="/login">
+            <button >Login</button>
+          </NavLink>
           <button onClick={demoLogin}>Demo Login</button>
           <NavLink to="/signup">
-            <button onClick={demoLogin}>Sign Up</button>
-
+            <button >Sign Up</button>
           </NavLink>
         </div>
         <div className='background'>

@@ -10,9 +10,9 @@ const renderTime = ({ remainingTime }) => {
 
   return (
     <div className="timer">
-      <div className="text">Remaining</div>
+      <div className="text"></div>
       <div className="value">{`${minutes}:${seconds}`}</div>
-      <div className="text">minutes</div>
+      <div className="text"></div>
     </div>
   );
 };
@@ -25,7 +25,7 @@ const Timer = () => {
         <CountdownCircleTimer
           isPlaying={timer}
           duration={1500}
-          isLinearGradient={true}
+          // isLinearGradient={true}
           colors={[["#23CEFD", 0.33], ["#FB25E7", 0.33]]}
           onComplete={() => [false, 1000]}
           trailColor={"white"}

@@ -4,6 +4,7 @@ import { Route, Switch } from "react-router-dom";
 import SignupFormPage from "./components/SignupFormPage";
 import * as sessionActions from "./store/session";
 import Desktop from "./components/Desktop";
+import LoginForm from "./components/LoginFormModal/LoginForm";
 
 
 function App() {
@@ -21,6 +22,9 @@ function App() {
             <Desktop isLoaded={isLoaded} />
           </Route>
 
+          <Route path="/login">
+            <LoginForm />
+          </Route>
           <Route path="/signup">
             <SignupFormPage />
           </Route>

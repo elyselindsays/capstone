@@ -31,8 +31,8 @@
 }
 
 input[type='checkbox'].check-custom ~ .check-toggle-challenge {
-    width: 1.5rem;
-  height: 1.5rem;
+    width: 4rem;
+  height: 4rem;
   position: relative;
   display: inline-block;
   vertical-align: middle;
@@ -44,6 +44,10 @@ input[type='checkbox'].check-custom ~ .check-toggle-challenge {
 
 input[type='checkbox'].check-custom:checked ~ .check-toggle-challenge {
   border-color: #020200;
-  background: #17ff49 url('') center no-repeat;
+  background: url(../final-icons/photo-processing/1445205-reward-and-medal/svg/002-badge-1.svg) center no-repeat;
   background-size: 75%;
+}
+
+.inner-progress {
+  
 }

@@ -19,50 +19,68 @@ const PageModal = () => {
   return (
     <div className='overlay'>
       <div id="templates-container" >
-        <h2>Page Templates</h2>
+        <h2 id='page-templates'>Page Templates</h2>
         <section>
 
-          <h5 >Lists</h5>
-          {lists.map(list => (
-            <div key={`list${list.id}`} id="add-page">
-              <div value={list} className="page-template-icon" onClick={() => dispatch(addNewPage(list, "list"))}>{list}</div>
-            </div>
-          ))}
+          <h5 className='template-headings'>LISTS</h5>
+          <div className='template-categories'>
 
-          <h5>Trackers</h5>
-          {trackers.map(tracker => (
-            <div key={`tracker${tracker.id}`} id="add-page">
-              <div value={tracker} className="page-template-icon" onClick={() => dispatch(addNewPage(tracker, "tracker"))}>{tracker}</div>
-            </div>
-          ))}
+            {lists.map(list => (
+              <div key={`list${list.id}`} id="add-page">
+                <div value={list} className="page-template-icon list-highlight" onClick={() => dispatch(addNewPage(list, "list"))}>{list}</div>
+              </div>
+            ))}
 
-          <h5>Challenges</h5>
-          {challenges.map(challenge => (
-            <div key={`challenge${challenge.id}`} id="add-page">
-              <div value={challenge} className="page-template-icon" onClick={() => dispatch(addNewPage(challenge, "challenge"))}>{challenge}</div>
-            </div>
-          ))}
+          </div>
+          <h5 className='template-headings'>TRACKERS</h5>
+          <div className='template-categories'>
 
-          <h5>Goals</h5>
-          {goals.map(goal => (
-            <div key={`goal${goal.id}`} id="add-page">
-              <div value={goal} className="page-template-icon" onClick={() => dispatch(addNewPage(goal, "goals"))}>{goal}</div>
-            </div>
-          ))}
+            {trackers.map(tracker => (
+              <div key={`tracker${tracker.id}`} id="add-page">
+                <div value={tracker} className="page-template-icon tracker-highlight" onClick={() => dispatch(addNewPage(tracker, "tracker"))}>{tracker}</div>
+              </div>
+            ))}
+          </div>
 
-          <h5>Memories</h5>
-          {memories.map(memory => (
-            <div key={`memory${memory.id}`} id="add-page">
-              <div value={memory} className="page-template-icon" onClick={() => dispatch(addNewPage(memory, "memory"))}>{memory}</div>
-            </div>
-          ))}
+          <h5 className='template-headings'>CHALLENGES</h5>
+          <div className='template-categories'>
 
-          <h5>Notes</h5>
-          {notes.map(note => (
-            <div key={`note${note.id}`} id="add-page">
-              <div value={note} className="page-template-icon" onClick={() => dispatch(addNewPage(note, "note"))}>{note}</div>
-            </div>
-          ))}
+            {challenges.map(challenge => (
+              <div key={`challenge${challenge.id}`} id="add-page">
+                <div value={challenge} className="page-template-icon challenge-highlight" onClick={() => dispatch(addNewPage(challenge, "challenge"))}>{challenge}</div>
+              </div>
+            ))}
+          </div>
+
+          <h5 className='template-headings'>GOALS</h5>
+          <div className='template-categories'>
+
+            {goals.map(goal => (
+              <div key={`goal${goal.id}`} id="add-page">
+                <div value={goal} className="page-template-icon goal-highlight" onClick={() => dispatch(addNewPage(goal, "goals"))}>{goal}</div>
+              </div>
+            ))}
+          </div>
+
+          <h5 className='template-headings'>MEMORIES</h5>
+          <div className='template-categories'>
+
+            {memories.map(memory => (
+              <div key={`memory${memory.id}`} id="add-page">
+                <div value={memory} className="page-template-icon memory-highlight" onClick={() => dispatch(addNewPage(memory, "memory"))}>{memory}</div>
+              </div>
+            ))}
+          </div>
+
+          <h5 className='template-headings'>NOTES</h5>
+          <div className='template-categories'>
+
+            {notes.map(note => (
+              <div key={`note${note.id}`} id="add-page">
+                <div value={note} className="page-template-icon note-highlight" onClick={() => dispatch(addNewPage(note, "note"))}>{note}</div>
+              </div>
+            ))}
+          </div>
 
         </section>
       </div>
