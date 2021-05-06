@@ -26,7 +26,7 @@ const Timer = () => {
           isPlaying={timer}
           duration={1500}
           // isLinearGradient={true}
-          colors={[["#23CEFD", 0.33], ["#FB25E7", 0.33]]}
+          colors={[["#8425FA", 0.33], ["#FB25E7", 0.33]]}
           onComplete={() => [false, 1000]}
           trailColor={"white"}
           size={130}

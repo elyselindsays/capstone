@@ -40,7 +40,7 @@ const Tracker = ({ id, title }) => {
       <hr></hr>
       {
         itemsArr && itemsArr.map((item) => (
-          <div className='item' key={item.id}>
+          <div className='item grid-item' key={item.id}>
             <p id='habit'>{item.text}</p>
             <div className='tracker-grid'>
               {/* <label>
@@ -87,7 +87,7 @@ const Tracker = ({ id, title }) => {
         ))
       }
       <form onSubmit={itemSubmit}>
-        <input onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Add to list" />
+        <input className="list-input" onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Add to list" />
       </form>
       <p>Total: {itemsArr.length}</p>
       <ProgressBar progress={trackerProgress} steps={trackerLength} radius={100} />

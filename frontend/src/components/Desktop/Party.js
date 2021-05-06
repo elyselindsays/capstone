@@ -1,6 +1,10 @@
 import React, { useState } from 'react'
 import Confetti from 'react-confetti';
-
+import {
+  useWindowSize,
+  useWindowWidth,
+  useWindowHeight,
+} from '@react-hook/window-size'
 
 
 // const confettiCompleteAction = action('Confetti Complete')
@@ -8,10 +12,14 @@ import Confetti from 'react-confetti';
 const PartyMode = () => {
 
   const [party, setParty] = useState(false)
+  const { width, height } = useWindowSize()
   return (
     <div className={'root' + (party ? ' party' : '')}>
       <Confetti
+        width={width}
+        height={height}
         // wind={.5}
+        // confettiSource={{ x: -100, y: 0 }}
         gravity={1}
         initialVelocityY={{
           range: true,

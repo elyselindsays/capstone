@@ -29,25 +29,21 @@ const BookList = ({ id, title }) => {
       <h1>Books I've Read</h1>
       <hr></hr>
       <form onSubmit={itemSubmit}>
-        <input onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Book Title" />
+        <input className="list-input" onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Book Title" />
       </form>
-      <div id='bookshelf'>
-        {
-          itemsArr && itemsArr.map((item) => (
-            <div className='book-icon' key={item.id}>
-              {/* <div className='book-icon'> */}
-              <p className='book'>{item.text}</p>
-              {/* </div> */}
-            </div>
-          ))
-        }
-        <div id='row-1'>
+      <div id='bookshelf-container'>
 
-        </div>
-        <div id='row-2'>
+        <div id='bookshelf'>
+          {
+            itemsArr && itemsArr.map((item) => (
+              <div className='book-icon' key={item.id}>
+                {/* <div className='book-icon'> */}
+                <p className='book'>{item.text}</p>
+                {/* </div> */}
+              </div>
+            ))
+          }
 
-        </div>
-        <div id='row-3'>
 
         </div>
       </div>

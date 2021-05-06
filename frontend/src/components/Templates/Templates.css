@@ -1,21 +1,36 @@
 .book-icon {
-  width:4rem;
-  height: 5rem;
-  background: no-repeat center/95% url(../final-icons/photo-processing/book-imgs/imageedit_5_8489626966.png);
+  width:5rem;
+  height: 6rem;
+  display: flex;
+  align-items: center;
+  background: no-repeat center/99% url(../final-icons/photo-processing/book-imgs/imageedit_5_8489626966.png);
 }
 
 .book-icon:nth-child(2) {
-  background: no-repeat center/95% url(../final-icons/photo-processing/book-imgs/green-book.png);
+  background: no-repeat center/99% url(../final-icons/photo-processing/book-imgs/green-book.png);
 }
 
 .book-icon:nth-child(3) {
-  background: no-repeat center/95% url(../final-icons/photo-processing/book-imgs/pink-cook.png)
+  background: no-repeat center/99% url(../final-icons/photo-processing/book-imgs/pink-cook.png)
 }
 .book-icon:nth-child(4) {
-  background: no-repeat center/95% url(../final-icons/photo-processing/book-imgs/purple-book.png)
+  background: no-repeat center/99% url(../final-icons/photo-processing/book-imgs/purple-book.png)
 }
 .book-icon:nth-child(5) {
-  background: no-repeat center/95% url(../final-icons/photo-processing/book-imgs/yellow-book.png)
+  background: no-repeat center/99% url(../final-icons/photo-processing/book-imgs/yellow-book.png)
+}
+
+
+.book {
+
+}
+
+
+#week-circles-container {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  display: flex;
+  justify-content: space-evenly;
 }
 
 /* 
@@ -28,6 +43,16 @@
 
 #week-circles-container {
   display: flex;
+}
+
+#bookshelf {
+  margin-top: 2rem;
+}
+
+
+#bookshelf-container {
+  display: flex;
+  justify-content: center;
 }
 
 input[type='checkbox'].check-custom ~ .check-toggle-challenge {

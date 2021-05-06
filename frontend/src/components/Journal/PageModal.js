@@ -40,6 +40,9 @@ const PageModal = () => {
                 <div value={tracker} className="page-template-icon tracker-highlight" onClick={() => dispatch(addNewPage(tracker, "tracker"))}>{tracker}</div>
               </div>
             ))}
+            <div>
+              <div value={hydration} className="page-template-icon tracker-highlight" onClick={() => dispatch(addNewPage(hydration, "hydration"))}>{hydration}</div>
+            </div>
           </div>
 
           <h5 className='template-headings'>CHALLENGES</h5>

@@ -136,13 +136,17 @@ const Challenge = ({ id, title }) => {
 
     let complete = 0;
     const addComplete = (e) => {
+      console.log(complete);
       complete++;
-      if (complete === 7) {
-        setShowParty(true);
-      }
+      // if (complete === 7) {
+      //   setShowParty(true);
+      // }
       return complete;
     }
 
+    const addCompleteFinal = () => {
+      setShowParty(true);
+    }
 
 
     return (
@@ -153,44 +157,44 @@ const Challenge = ({ id, title }) => {
           <input type='text' />
         </div>
         <div id='week-circles-container'>
-          <div onClick={addComplete} className='week-circle'>1
-          <label>
+          <div onClick={addComplete} className='week-circle'>
+            <label>
               <input type="checkbox" className="check-custom challenge" />
               <span className="check-toggle check-toggle-challenge"></span>
             </label>
           </div>
-          <div onClick={addComplete} className='week-circle'>2
-          <label>
+          <div onClick={addComplete} className='week-circle'>
+            <label>
               <input type="checkbox" className="check-custom challenge" />
               <span className="check-toggle check-toggle-challenge"></span>
             </label>
           </div>
-          <div onClick={addComplete} className='week-circle'>3
-          <label>
+          <div onClick={addComplete} className='week-circle'>
+            <label>
               <input type="checkbox" className="check-custom challenge" />
               <span className="check-toggle check-toggle-challenge"></span>
             </label>
           </div>
-          <div onClick={addComplete} className='week-circle'>4
-          <label>
+          <div onClick={addComplete} className='week-circle'>
+            <label>
               <input type="checkbox" className="check-custom challenge" />
               <span className="check-toggle check-toggle-challenge"></span>
             </label>
           </div>
-          <div onClick={addComplete} className='week-circle'>5
-          <label>
+          <div onClick={addComplete} className='week-circle'>
+            <label>
               <input type="checkbox" className="check-custom challenge" />
               <span className="check-toggle check-toggle-challenge"></span>
             </label>
           </div>
-          <div onClick={addComplete} className='week-circle'>6
-          <label>
+          <div onClick={addComplete} className='week-circle'>
+            <label>
               <input type="checkbox" className="check-custom challenge" />
               <span className="check-toggle check-toggle-challenge"></span>
             </label>
           </div>
-          <div onClick={addComplete} className='week-circle'>7
-          <label>
+          <div onClick={addCompleteFinal} className='week-circle'>
+            <label>
               <input type="checkbox" className="check-custom challenge" />
               <span className="check-toggle check-toggle-challenge"></span>
             </label>

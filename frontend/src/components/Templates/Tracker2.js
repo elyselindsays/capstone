@@ -32,8 +32,8 @@ const Tracker2 = ({ id, title }) => {
 
   return (
     <>
-      <h2>{title}</h2>
-      <hr></hr>
+      <h2 className='page-title'>{title}</h2>
+      <hr class="horiz"></hr>
       {
         itemsArr && itemsArr.map((item) => (
           <div className='item' key={item.id}>
@@ -48,11 +48,11 @@ const Tracker2 = ({ id, title }) => {
         ))
       }
       <form onSubmit={itemSubmit}>
-        <input onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Add to list" />
+        <input className='list-input' onChange={(e) => setText(e.target.value)} type="text" value={text} placeholder="Add to list" />
       </form>
       <div id='progress-bar-container'>
         <ProgressBar progress={completedArr.length} steps={itemsArr.length} radius={60} fillColor="transparent" strokeWidth={15}
-          strokeColor="#8425FA"
+          strokeColor="#FDA228"
           strokeLinecap="round"
           trackStrokeWidth={12}
           trackStrokeLinecap="round" children={<h5 className='inner-progress'>{completedArr.length}/{itemsArr.length}</h5>} />

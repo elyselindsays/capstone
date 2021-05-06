@@ -41,7 +41,7 @@ const OpenJournal = () => {
     <div className='notebook-splash'>
       <h1>Brain Dump</h1>
       <hr></hr>
-      <form onSubmit={lotSubmit}>
+      <form className='form' onSubmit={lotSubmit}>
         <input id="braindump-input" type="text" placeholder="Let it all out"></input>
       </form>
       <div id='braindump-container'>

@@ -9,6 +9,7 @@ import image from '../images/vecteezy_isometric-workspace-with-modern-style_2175
 import PartyMode from './Party';
 
 function Desktop({ isLoaded }) {
+  const [showParty, setShowParty] = useState(false);
   const sessionUser = useSelector(state => state.session.user);
   const dispatch = useDispatch();
 
@@ -18,7 +19,7 @@ function Desktop({ isLoaded }) {
   };
 
   const demoLogin = () => {
-    dispatch(sessionActions.login({ credential: 'demo@user.io', password: 'password' }));
+    dispatch(sessionActions.login({ credential: 'ndsays@gmail.com', password: 'password' }));
   }
 
   let splashPage;
@@ -60,6 +61,7 @@ function Desktop({ isLoaded }) {
 
   return (
     <>
+      {/* {showParty && <PartyMode />} */}
       <div id="desktop-container">
         {isLoaded && splashPage}
       </div>
