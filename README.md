@@ -1,10 +1,5 @@
 # My Bu-Jo
 
-Summary of project goes here
-live link
-screenshots
-
-With [Handlebars templates](http://handlebarsjs.com/),
 
 
 ## Feature List

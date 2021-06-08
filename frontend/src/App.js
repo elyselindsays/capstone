@@ -6,6 +6,7 @@ import * as sessionActions from "./store/session";
 import Desktop from "./components/Desktop";
 import LoginForm from "./components/LoginFormModal/LoginForm";
 import Sysufs from "./components/SYSUFS/Sysufs";
+import Canvas from "./components/Canvas";
 
 
 function App() {
@@ -31,6 +32,9 @@ function App() {
           </Route>
           <Route path="/sysufs">
             <Sysufs />
+          </Route>
+          <Route path="/canvas">
+            <Canvas />
           </Route>
 
 
